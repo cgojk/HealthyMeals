@@ -1,0 +1,316 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Nunito";
+  src: url("./../assets/fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./../assets/fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("./../assets/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("./../assets/fonts/Nunito-Sans/static/NunitoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("./../assets/fonts/Nunito-Sans/static/NunitoSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+:where(body,
+h1, h2, h3, h4, h5, h6,
+p,
+ul, ol,
+dl, dd,
+figure,
+blockquote) {
+  margin: 0;
+}
+
+:where(ul, ol) {
+  padding: 0;
+  list-style: none;
+}
+
+canvas,
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+fieldset {
+  padding: 0;
+  border: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none;
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+:root {
+  --neutral-900:hsl(164,45%,16%);
+  --neutral-600:hsl(166,22%,28%);
+  --neutral-300:hsl(160,13%,84%);
+  --neutral-200:hsl(150,10%,89%);
+  --neutral-100:hsl(45,20%,95%);
+  --neutral-0:hsl(0,0%,100%);
+  --orange-500:hsl(21,98%,71%);
+  --teal-500:hsl(170,40%,48%);
+  --indigo-500:hsl(230,62%,64%);
+  --ff-nunito: 'Nunito', sans-serif;
+  --ff-nunito-sans: 'Nunito Sans', sans-serif;
+  /* =========================
+     FONT WEIGHTS
+  ========================== */
+  --fw-500: 500;
+  --fw-600: 600;
+  --fw-700: 700;
+  --fw-800: 800;
+  /* =========================
+     FONT SIZES
+  ========================== */
+  /* 52px → 72px */
+  --fs-900: clamp(3.25rem, 2.8rem + 1.8vw, 4.5rem);
+  /* 40px → 48px */
+  --fs-800: clamp(2.5rem, 2.2rem + 1vw, 3rem);
+  /* 28px → 32px */
+  --fs-700: clamp(1.75rem, 1.6rem + 0.6vw, 2rem);
+  /* 22px → 24px */
+  --fs-600: clamp(1.375rem, 1.2rem + 0.5vw, 1.5rem);
+  /* 18px → 20px */
+  --fs-500: clamp(1.125rem, 1rem + 0.4vw, 1.25rem);
+  /* 16px → 18px */
+  --fs-400: clamp(1rem, 0.9rem + 0.3vw, 1.125rem);
+  /* 16px */
+  --fs-300: 1rem;
+  /* 14px */
+  --fs-200: 0.875rem;
+  /* =========================
+     FONT 1
+     Nunito ExtraBold
+     52px → 72px
+     line-height: 110%
+     letter-spacing: -2px
+  ========================== */
+  --font-1: var(--fw-900) var(--fs-900) / 1.1 var(--ff-nunito);
+  --ls-1: -0.125rem;
+  /* =========================
+     FONT 2
+     Nunito ExtraBold
+     40px → 48px
+     line-height: 120%
+     letter-spacing: -2px
+  ========================== */
+  --font-2: var(--fw-900) var(--fs-800) / 1.2 var(--ff-nunito);
+  --ls-2: -0.125rem;
+  /* =========================
+     FONT 3
+     Nunito Bold
+     28px → 32px
+     line-height: 130%
+     letter-spacing: -1px
+  ========================== */
+  --font-3: var(--fw-700) var(--fs-700) / 1.3 var(--ff-nunito);
+  --ls-3: -0.0625rem;
+  /* =========================
+     FONT 4
+     Nunito Bold
+     22px → 24px
+     line-height: 130%
+     letter-spacing: -1px
+  ========================== */
+  --font-4: var(--fw-700) var(--fs-600) / 1.3 var(--ff-nunito);
+  --ls-4: -0.0625rem;
+  /* =========================
+     FONT 5
+     Nunito Bold
+     18px → 20px
+     line-height: 140%
+     letter-spacing: -0.5px
+  ========================== */
+  --font-5: var(--fw-700) var(--fs-500) / 1.4 var(--ff-nunito);
+  --ls-5: -0.03125rem;
+  /* =========================
+     FONT 6
+     Nunito Sans Medium
+     18px → 20px
+     line-height: 150%
+     letter-spacing: -0.4px
+  ========================== */
+  --font-6: var(--fw-500) var(--fs-500) / 1.5 var(--ff-nunito-sans);
+  --ls-6: -0.025rem;
+  /* =========================
+     FONT 7
+     Nunito SemiBold
+     16px → 18px
+     line-height: 150%
+     letter-spacing: -0.3px
+  ========================== */
+  --font-7: var(--fw-600) var(--fs-400) / 1.5 var(--ff-nunito);
+  --ls-7: -0.01875rem;
+  /* =========================
+     FONT 8
+     Nunito Sans Bold
+     16px
+     line-height: 150%
+     letter-spacing: -0.3px
+  ========================== */
+  --font-8: var(--fw-700) var(--fs-300) / 1.5 var(--ff-nunito-sans);
+  --ls-8: -0.01875rem;
+  /* =========================
+     FONT 9
+     Nunito Sans Medium
+     16px
+     line-height: 150%
+     letter-spacing: -0.3px
+  ========================== */
+  --font-9: var(--fw-500) var(--fs-300) / 1.5 var(--ff-nunito-sans);
+  --ls-9: -0.01875rem;
+  /* =========================
+     FONT 10
+     Nunito Sans Bold
+     14px
+     line-height: 150%
+     letter-spacing: -0.3px
+  ========================== */
+  --font-10: var(--fw-700) var(--fs-200) / 1.5 var(--ff-nunito-sans);
+  --ls-10: -0.01875rem;
+  /* =========================
+     SPACING
+  ========================== */
+  --spacing-025: 0.125rem; /* 2px */
+  --spacing-050: 0.25rem; /* 4px */
+  --spacing-075: 0.375rem; /* 6px */
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-125: 0.625rem; /* 10px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-250: 1.25rem; /* 20px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-800: 4rem; /* 64px */
+  --spacing-1000: 5rem; /* 80px */
+  --spacing-1200: 6rem; /* 96px */
+  --spacing-1400: 7rem; /* 112px */
+  --spacing-1600: 8rem; /* 128px */
+  --spacing-1800: 8.75rem; /* 140px */
+  /* =========================
+     BORDER RADIUS
+  ========================== */
+  --radius-4: 0.25rem; /* 4px */
+  --radius-6: 0.375rem; /* 6px */
+  --radius-8: 0.5rem; /* 8px */
+  --radius-10: 0.625rem; /* 10px */
+  --radius-12: 0.75rem; /* 12px */
+  --radius-16: 1rem; /* 16px */
+  --radius-20: 1.25rem; /* 20px */
+  --radius-24: 1.5rem; /* 24px */
+  --radius-full: 62.4375rem; /* 999px */
+}/*# sourceMappingURL=index.css.map */
