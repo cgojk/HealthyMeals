@@ -1,14 +1,23 @@
 import React from "react";
+import heroImagedesktop from "../assets/images/image-home-hero-large.webp";
+import heroImageMobile from "../assets/images/image-home-hero-small.webp";
+import Navigation from "../components/Navigation";
 
 export default function Home() {
   return (
-    <div className="home">
-      <h1>Healthy meals, zero fuss</h1>
-      <p>
+<>
+    <Navigation/>
+    <section className="hero">
+      <h1 className="title__hero">Healthy meals, zero fuss</h1>
+      <p className="hero__text">
         Discover eight quick, whole-food recipes that you can cook 
         tonight—no processed junk, no guesswork.
       </p>
-      <button>Start exploring</button>
+      <button className="btn">Start exploring</button>
+
+
+
+      <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" />
 
       <h2>What you'll get</h2>
       <ul>
@@ -31,7 +40,9 @@ export default function Home() {
       <button>Browse recipes</button>
       
       <p>Made with ❤️ and 🥑</p>
-    </div>
+    </section>
+
+    </>
   );
 }
 {/* 
