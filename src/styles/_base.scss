@@ -270,9 +270,9 @@ main{
     display:flex;
     flex-direction:column;
     padding:var(--spacing-200);
-   
-    gap:var(--spacing-300);
+       gap:var(--spacing-300);
     margin-top:var(--spacing-400);
+   
 
 
 
@@ -296,7 +296,9 @@ main{
 }
 
 // seciton call to action container================
-
+.recipes__section{
+    padding:var(--spacing-200);
+}
 .call-to-action{
     display:flex;
     justify-content:center;
@@ -306,6 +308,7 @@ main{
     flex-direction:column;
     background-color:var(--neutral-300);
     padding:var(--spacing-300);
+     border-radius:var(--radius-16);
 
     .call-to-action__title{
         font: var(--font-2);
@@ -330,7 +333,41 @@ main{
         padding:var(--spacing-200);
         border-radius: var(--radius-10);
         transition: background-color 0.3s ease;
+        cursor:pointer;
+        &:hover {
+            opacity:0.5;
+        }
 
 
 }  
+}
+
+.footer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:var(--spacing-300);
+    margin-top:var(--spacing-500);
+    flex-direction:column;
+
+    .footer__links{
+        display:flex;
+        flex-direction:row;
+        gap:var(--spacing-200);
+        list-style:none;
+        padding:0;
+        margin:0;
+        .footer__item{
+            .footer__link{
+                color: var(--neutral-600);
+                font: var(--font-6);
+                letter-spacing: var(--ls-6);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: var(--neutral-900);
+                }
+            }
+        }
+    }
 }
