@@ -3,43 +3,59 @@ import React from "react";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
+import imageAbout from "../assets/images/image-about-our-mission-small.webp";
+import imagebeyonplate from  "../assets/images/image-about-beyond-the-plate-small.webp";
 
 export default function About() {
   return (
     <>
     <Navigation/>
     <section className="about container">
-      <h1 className="about__title">Our mission</h1>
-      <p className="about__text">
-        Help more people cook nourishing meals, more often.
-        Healthy Recipe Finder was created to prove that healthy 
-        eating can be convenient, affordable, and genuinely delicious. 
-        We showcase quick, whole-food dishes that anyone can master—no 
-        fancy equipment, no ultra-processed shortcuts—just honest 
-        ingredients and straightforward steps.
-      </p>
+      <div className="hero__about">
+          <div className="wrapper_text">
+            <span className="small__title">Our mission</span>
+            <h1 className="about__title">Help more people coook nourishing meals, more often.</h1>
+            <p className="about__text">
+              Help more people cook nourishing meals, more often.
+              Healthy Recipe Finder was created to prove that healthy 
+              eating can be convenient, affordable, and genuinely delicious. 
+              We showcase quick, whole-food dishes that anyone can master—no 
+              fancy equipment, no ultra-processed shortcuts—just honest 
+              ingredients and straightforward steps.
+            </p>
+          </div>
+          <div className="wrapper_image">
+            <img src={imageAbout} alt="About" loading="lazy" className="about__image" />
+          </div>
+      </div>
 
-      <h2 className="about__subtitle">Why we exist</h2>
-      <p className="about__text">
-        Cut through the noise. 
-        The internet is bursting with recipes, yet most busy cooks 
-        still default to take-away or packaged foods. We curate a 
-        tight collection of fool-proof dishes so you can skip the 
-        scrolling and start cooking.
-      </p>
+      <section className="About__section--info">
+ 
+          <h2 className="about__subtitle">Why we exist</h2>
+          <p className="about__text">
+            Cut through the noise. 
+            The internet is bursting with recipes, yet most busy cooks 
+            still default to take-away or packaged foods. We curate a 
+            tight collection of fool-proof dishes so you can skip the 
+            scrolling and start cooking.
+          </p>
 
-      <p className="about__text">
-        Empower home kitchens. 
-        When you control what goes into your meals, you control how 
-        you feel. Every recipe is built around unrefined ingredients 
-        and ready in about half an hour of active prep.
-      </p>
+          <p className="about__text">
+            Empower home kitchens. 
+            When you control what goes into your meals, you control how 
+            you feel. Every recipe is built around unrefined ingredients 
+            and ready in about half an hour of active prep.
+          </p>
 
-      <p className="about__text">
-        Make healthy look good. 
-        High-resolution imagery shows you exactly what success looks 
-        like—because we eat with our eyes first, and confidence matters.
-      </p>
+          <p className="about__text">
+            Make healthy look good. 
+            High-resolution imagery shows you exactly what success looks 
+            like—because we eat with our eyes first, and confidence matters.
+          </p>
+
+      </section>
+
+      <section className="About__section--philosophy">
 
       <h2 className="about__subtitle">Our food philosophy</h2>
       <p className="about__text">
@@ -65,7 +81,9 @@ export default function About() {
         Short ingredient lists cut down on food waste and carbon footprint, 
         while plant-forward dishes keep things planet-friendly.
       </p>
+ </section>
 
+ <section className="About__section--beyond">
       <h2 className="about__subtitle">Beyond the plate</h2>
       <p className="about__text">
         We believe food is a catalyst for community and well-being. 
@@ -78,13 +96,18 @@ export default function About() {
         <li className="about__list__item">Spark curiosity about seasonal produce and local agriculture.</li>
       </ul>
 
+      <img src={imagebeyonplate} alt="Beyond the plate" loading="lazy" className="about__image--beyond" />
+      </section>
     </section>
     <section className="recipes__section">
      <CalltoAction/>
     </section>
     <Footer/>
     </>
+    
   )
+}
+  
 
   
 
