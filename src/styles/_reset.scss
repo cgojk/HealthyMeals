@@ -40,7 +40,7 @@
 
   :where(ul, ol) {
     padding: 0;
-    list-style: none;
+    // list-style: none;
   }
 
   canvas,
@@ -49,8 +49,10 @@
   svg,
   video {
     display: block;
-    max-inline-size: 100%;
+    //  max-inline-size: 100%;
     block-size: auto;
+    
+
   }
 
   button,

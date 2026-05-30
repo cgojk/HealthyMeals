@@ -71,7 +71,6 @@ blockquote) {
 
 :where(ul, ol) {
   padding: 0;
-  list-style: none;
 }
 
 canvas,
@@ -80,7 +79,6 @@ picture,
 svg,
 video {
   display: block;
-  max-inline-size: 100%;
   block-size: auto;
 }
 
@@ -664,9 +662,16 @@ main {
   border-radius: var(--radius-20);
   overflow: hidden;
 }
+.wrapper__image .about__image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 .about__section--info {
   margin-top: var(--spacing-800);
+  padding: var(--spacing-200);
 }
 .about__section--info .about__subtitle {
   font: var(--font-2);
@@ -684,9 +689,6 @@ main {
   flex-direction: row;
   gap: var(--spacing-300);
 }
-.about__section--info .about__text .wrapper__image--arrow .about__icon--arrow {
-  width: 80px;
-}
 .about__section--info .about__text .wrapper__subtitle--description {
   display: flex;
   flex-direction: column;
@@ -701,4 +703,45 @@ main {
   font: var(--font-6);
   letter-spacing: var(--ls-6);
   color: var(--neutral-800);
+}
+
+.about__section--beyond {
+  padding: var(--spacing-200);
+  margin-top: var(--spacing-800);
+}
+.about__section--beyond .beyond__text {
+  margin-bottom: var(--spacing-600);
+}
+.about__section--beyond .beyond__text .about__beyond--subtitle {
+  font: var(--font-2);
+  letter-spacing: var(--ls-2);
+  color: var(--neutral-900);
+}
+.about__section--beyond .beyond__text .about__beyond--text {
+  margin-top: var(--spacing-200);
+  font: var(--font-6);
+  letter-spacing: var(--ls-6);
+  color: var(--neutral-900);
+}
+.about__section--beyond .beyond__text .about__beyond--list {
+  margin-top: var(--spacing-400);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+.about__section--beyond .beyond__text .about__beyond--list .about__list__item {
+  font: var(--font-6);
+  letter-spacing: var(--ls-6);
+  color: var(--neutral-900);
+  list-style-position: inside;
+  padding-left: var(--spacing-100);
+  list-style-type: disc;
+}
+
+.image__beyond .about__image--beyond {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: var(--radius-20);
 }/*# sourceMappingURL=index.css.map */
