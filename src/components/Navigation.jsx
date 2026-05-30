@@ -39,13 +39,13 @@ return (
     {/* Nav list, toggled open on mobile */}
 
   <nav className="navigation" aria-label="homepage Navigation">
-        
+        <div className="container__items--navigation">
         <ul className={`nav__list ${menuOpen ? "open" : ""}`}>
-             <li className="nav-logo">
+             {/* <li className="nav-logo">
                 <Link to="/">
                 <img src={logo} className="mobile-logo nav-logo" alt="Healthy meals logo" />
                 </Link>
-          </li>
+          </li> */}
             <li className="nav__items">
 
                 <NavLink to="/home" 
@@ -63,8 +63,13 @@ return (
                 className="nav__items__links" href="#">Recipes</NavLink>
             </li>
         </ul>
+
+            
+         {/* <button className="btn">Browse recipes</button> */}
+         </div>
      </nav>
     </div>
+     
  </header>
 
 );
