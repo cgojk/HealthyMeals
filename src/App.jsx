@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Home from "./pages/home";
 import About from "./pages/about";
+import Recipes from "./pages/recipes";
 // import About from "./pages/about";
 // import Recipe from "./pages/recipe";
 // import Recipes from "./pages/recipes";
@@ -21,7 +22,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             {/* <Route path="/about" element={<About />
             <Route path="/recipes" element={<Recipe />} /> */}
-             {/* <Route path="/recipes" element={<recipes />} /> */}
+             <Route path="/recipes" element={<Recipes />} />
              {/* <Route path="/recipes" element={<Recipes />} /> */} 
 
              
