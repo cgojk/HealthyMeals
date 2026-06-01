@@ -14,13 +14,18 @@ export default function Home() {
 <>
     <Navigation/>
     <section className="hero">
+          
           <h1 className="title__hero">Healthy meals, zero fuss</h1>
           <p className="hero__text">
             Discover eight quick, whole-food recipes that you can cook 
             tonight—no processed junk, no guesswork.
           </p>
           <button className="btn">Start exploring</button>
-          <img  src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" />
+          <picture>
+            <source media="(max-width: 768px)" srcSet={heroImageMobile} />
+            <source media="(min-width: 769px)" srcSet={heroImagedesktop} />
+            <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" />
+          </picture>
     </section>
 
     <section className="service ">

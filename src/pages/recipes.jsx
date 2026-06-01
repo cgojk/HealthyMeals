@@ -3,7 +3,8 @@ import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
 import { FaChevronDown } from "react-icons/fa";
 import searchbutton from "../assets/images/icon-search.svg";
-
+import CardRecipe from "../components/CardRecipe";
+import data from "../data/data.json";
 
 export default function Recipes() {
 
@@ -12,6 +13,17 @@ export default function Recipes() {
         dropdown.classList.toggle('show');
         
     }
+
+    // const searchRecipes = (event) => {
+    //   const searchTerm = event.target.value.toLowerCase();
+    //   const filteredRecipes = data.recipes.filter(recipe => 
+    //     recipe.title.toLowerCase().includes(searchTerm) || 
+    //     recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
+    //   );
+    //   // Update the state with the filtered recipes (you would need to implement this part)
+    // }
+
+  
 
   return (
     <>
@@ -57,6 +69,18 @@ export default function Recipes() {
       </div>
 
 </div>
+      <div className="recipes__list">
+        {data.map((recipe) => (
+          <CardRecipe
+            key={recipe.id}
+            title={recipe.title}
+            image={recipe.image}
+            prepTime={recipe.prepTime}
+            cookTime={recipe.cookTime}
+          />
+        ))}
+
+      </div>
 
     </section>
     <CalltoAction/>

@@ -4,7 +4,9 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
 import imageAbout from "../assets/images/image-about-our-mission-small.webp";
+import imageAboutDesktop from "../assets/images/image-about-our-mission-large.webp";
 import imagebeyonplate from  "../assets/images/image-about-beyond-the-plate-small.webp";
+import imagebeyonplateDesktop from  "../assets/images/image-about-beyond-the-plate-large.webp";
 
 import InfoItemAbout from "../components/InfoItemAbout";
 import dataInfoAbout from "../data/Aboutdatainfo.js";
@@ -34,6 +36,8 @@ export default function About() {
           </div>
           <div className="wrapper__image">
             <picture>
+              <source media="(max-width: 768px)" srcSet={imageAbout} />
+              <source media="(min-width: 769px)" srcSet={imageAboutDesktop} />
               <img src={imageAbout} alt="About" loading="lazy" className="about__image" />
             </picture>
           </div>
@@ -88,6 +92,8 @@ export default function About() {
           </div>
           <picture className="image__beyond">
        
+                <source media="(max-width: 768px)" srcSet={imagebeyonplate} />
+                <source media="(min-width: 769px)" srcSet={imagebeyonplateDesktop} />
                 <img src={imagebeyonplate} alt="Beyond the plate" loading="lazy" className="about__image--beyond" />
               </picture>
         
