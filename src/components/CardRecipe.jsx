@@ -10,10 +10,15 @@ export default function CardRecipe({
     return new URL(path, import.meta.url).href;
   };
 
-  const imageUrl = getImageUrl(image.large) || getImageUrl(image.small) || '';
+//  appears large image depeding of the siz oe the page if <768px it will appears small image it more thant 768 large iamge 
+
+
+
+  const imageUrl =  getImageUrl(image.large) || getImageUrl(image.small) || '';
    
     return (
         <div className="card-recipe">
+           
             <img src={imageUrl} alt={title} className="card-recipe__image" />
         
 

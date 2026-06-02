@@ -6,24 +6,43 @@ import searchbutton from "../assets/images/icon-search.svg";
 import CardRecipe from "../components/CardRecipe";
 import data from "../data/data.json";
 
+import React, { useState } from "react";
+// the user use the input and type ingredient or title recipe
+
+// the user clicks the search button 
+// the app filter the recipes 
+// 
+// the updating the filtered list only when specific dependencies like the search item change.
+
+
+
 export default function Recipes() {
 
-  const toggle = () => {
-        const dropdown = document.querySelector('.dropdown-menu');
-        dropdown.classList.toggle('show');
+ const [query, setQuery] = useState("");
+  // const [filteredRecipes, setFilteredRecipes] = useState(data.recipes);
+  const [showDropdown, setShowDropdown] = useState(false);
+  
+
+
+  const toggle = (e) => {
+    e.preventDefault();
+    setShowDropdown(!showDropdown);
         
     }
 
-    // const searchRecipes = (event) => {
-    //   const searchTerm = event.target.value.toLowerCase();
-    //   const filteredRecipes = data.recipes.filter(recipe => 
-    //     recipe.title.toLowerCase().includes(searchTerm) || 
-    //     recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(searchTerm))
-    //   );
-    //   // Update the state with the filtered recipes (you would need to implement this part)
-    // }
-
+  //  function handleSearch() {
+  //   const filtered = data.recipes.filter((recipe) => {
+  //     const titleMatch = recipe.title.toLowerCase().includes(query.toLowerCase());
+  //     const ingredientMatch = recipe.ingredients.some((ingredient) =>
+  //       ingredient.toLowerCase().includes(query.toLowerCase())
+  //     );
+  //     return titleMatch || ingredientMatch;
+  //   });
+  //   setFilteredRecipes(filtered);
+  // }
   
+
+ 
 
   return (
     <>
@@ -37,10 +56,10 @@ export default function Recipes() {
                      Max Prep Time <FaChevronDown />
                  </button>
                  <div className="dropdown-menu__list">
-                    <a href="#" onClick={toggle}>0 Minutes</a>
-                    <a href="#" onClick={toggle}>5 Minutes</a>
-                    <a href="#" onClick={toggle}>10 Minutes</a>
-                    <a href="#" onClick={toggle}>Clear</a>
+                    <a href="#" >0 Minutes</a>
+                    <a href="#" >5 Minutes</a>
+                    <a href="#" >10 Minutes</a>
+                    <a href="#" >Clear</a>
                  </div>
     </div>
 
@@ -50,39 +69,71 @@ export default function Recipes() {
                      Max Cooking time <FaChevronDown />
                   </button>
                   <div className="dropdown-menu__list">
-                      <a href="#" onClick={toggle}>0 Minutes</a>
-                      <a href="#" onClick={toggle}>5 Minutes</a>
-                      <a href="#" onClick={toggle}>10 Minutes</a>
-                      <a href="#" onClick={toggle}>15 Minutes</a>
-                      <a href="#" onClick={toggle}>20 Minutes</a>
+                      <a href="#" >0 Minutes</a>
+                      <a href="#" >5 Minutes</a>
+                      <a href="#" >10 Minutes</a>
+                      <a href="#" >15 Minutes</a>
+                      <a href="#" >20 Minutes</a>
                      
-                      <a href="#" onClick={toggle}>Clear</a>
+                      <a href="#" >Clear</a>
                   </div>
               </div>
       
       </div>
       <div className="search__button">
        
-        <input type="text" placeholder="Search by name or ingredient" className="search__input" 
-        img src={searchbutton} />
-       
+        <input type="text" placeholder="Search by name or ingredient"
+        className="search__input" 
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        />
+        <img src={searchbutton} alt="Search" className="search__icon"
+        // onClick={handleSearch}
+         />
+        
       </div>
 
+
 </div>
+
+
       <div className="recipes__list">
-        {data.map((recipe) => (
-          <CardRecipe
+        {query === "" ? (
+          data.map((recipe) => (
+            <CardRecipe
             key={recipe.id}
             title={recipe.title}
             slug={recipe.slug}
             image={recipe.image}
-
-           
             servings={recipe.servings}
             prepMinutes={recipe.prepMinutes}
             cookMinutes={recipe.cookMinutes}
+            
           />
-        ))}
+          ))
+          
+
+        ) : (
+          data.filter((recipe) => {
+            const titleMatch = recipe.title.toLowerCase().includes(query.toLowerCase());
+            const ingredientMatch = recipe.ingredients.some((ingredient) =>
+              ingredient.toLowerCase().includes(query.toLowerCase())
+            );
+            return titleMatch || ingredientMatch;
+
+          }).map((recipe) => (
+            <CardRecipe
+              key={recipe.id}
+              title={recipe.title}
+            slug={recipe.slug}
+            image={recipe.image}
+            servings={recipe.servings}
+            prepMinutes={recipe.prepMinutes}
+            cookMinutes={recipe.cookMinutes}
+            
+          />
+           ))
+          )}
 
       </div>
 
