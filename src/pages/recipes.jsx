@@ -74,9 +74,13 @@ export default function Recipes() {
           <CardRecipe
             key={recipe.id}
             title={recipe.title}
+            slug={recipe.slug}
             image={recipe.image}
-            prepTime={recipe.prepTime}
-            cookTime={recipe.cookTime}
+
+           
+            servings={recipe.servings}
+            prepMinutes={recipe.prepMinutes}
+            cookMinutes={recipe.cookMinutes}
           />
         ))}
 
