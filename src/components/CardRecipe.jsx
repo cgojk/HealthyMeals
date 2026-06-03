@@ -19,8 +19,15 @@ export default function CardRecipe({
     return (
         <div className="card-recipe">
            
-            <img src={imageUrl} alt={title} className="card-recipe__image" />
-        
+            <picture className="card-recipe__image-wrapper">
+                <source media="(max-width: 768px)" srcSet={getImageUrl(image.small)} />
+                <source media="(min-width: 769px)" srcSet={getImageUrl(image.large)} />
+                 <img src={imageUrl} alt={title} className="card-recipe__image" />
+
+{/*                
+                <img src={imageUrl} alt={title} className="card-recipe__image" /> */}
+            </picture>
+            
 
             <h3 className="card-recipe__title">{title}</h3>
             <p className="card-recipe__description">{slug}</p>

@@ -4,6 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 import hamburguerMenu from "../assets/images/icon-hamburger-menu.svg";
 import { useState } from "react";
 import { FaTimes } from "react-icons/fa";
+import React from "react";
+import ButtonRecipes from "./UI/ButtonRecipes";
 
 
 
@@ -65,8 +67,8 @@ return (
         </ul>
 
             
-         {/* <button className="btn">Browse recipes</button> */}
-         </div>
+         <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes> 
+        </div>
      </nav>
     </div>
      

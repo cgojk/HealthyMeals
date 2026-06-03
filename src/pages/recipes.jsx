@@ -2,17 +2,16 @@ import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
 import { FaChevronDown } from "react-icons/fa";
-import searchbutton from "../assets/images/icon-search.svg";
+// import searchbutton from "../assets/images/icon-search.svg";
 import CardRecipe from "../components/CardRecipe";
 import data from "../data/data.json";
+import ChoicesDropdownMenu from "../components/UI/ChoicesDropdownMenu";
+import ChoicesCooTime from "../components/UI/ChoicesCooTime";
+
+
 
 import React, { useState } from "react";
-// the user use the input and type ingredient or title recipe
 
-// the user clicks the search button 
-// the app filter the recipes 
-// 
-// the updating the filtered list only when specific dependencies like the search item change.
 
 
 
@@ -30,16 +29,7 @@ export default function Recipes() {
         
     }
 
-  //  function handleSearch() {
-  //   const filtered = data.recipes.filter((recipe) => {
-  //     const titleMatch = recipe.title.toLowerCase().includes(query.toLowerCase());
-  //     const ingredientMatch = recipe.ingredients.some((ingredient) =>
-  //       ingredient.toLowerCase().includes(query.toLowerCase())
-  //     );
-  //     return titleMatch || ingredientMatch;
-  //   });
-  //   setFilteredRecipes(filtered);
-  // }
+
   
 
  
@@ -51,7 +41,13 @@ export default function Recipes() {
     <h1 className="title__hero">Explore our simple, healthy recipes</h1>
     <p className="hero__text">Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
     <div className="wrapper__dropdown--menu">
-     <div className="dropdown-menu">
+
+      <div className="dropdown__menu--prepTime">
+
+   <ChoicesDropdownMenu/>
+ 
+      </div>
+     {/* <div className="dropdown-menu">
                  <button className="dropdown-toggle" onClick={toggle}>
                      Max Prep Time <FaChevronDown />
                  </button>
@@ -61,10 +57,12 @@ export default function Recipes() {
                     <a href="#" >10 Minutes</a>
                     <a href="#" >Clear</a>
                  </div>
-    </div>
+    </div> */}
 
      <div className="dropdown__menu--cookingTime">
-      <div className="dropdown-menu">
+      <ChoicesCooTime/>
+
+      {/* <div className="dropdown-menu">
                   <button className="dropdown-toggle" onClick={toggle}>
                      Max Cooking time <FaChevronDown />
                   </button>
@@ -77,20 +75,23 @@ export default function Recipes() {
                      
                       <a href="#" >Clear</a>
                   </div>
-              </div>
+              </div> */}
       
       </div>
       <div className="search__button">
-       
-        <input type="text" placeholder="Search by name or ingredient"
-        className="search__input" 
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        />
-        <img src={searchbutton} alt="Search" className="search__icon"
-        // onClick={handleSearch}
-         />
+
+        <input
+                    type="text"
+          placeholder="Search by name or ingredient"
+          className="search__input"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         
+         
+        />
+     
+       
+       
       </div>
 
 
