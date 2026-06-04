@@ -11,12 +11,13 @@ export default function ChoicesDropdownMenu() {
     return (
         <Menu>
             <MenuButton>Max Cooking Time</MenuButton>
+            <div>
             <MenuDropdown>
                 {cookTime.map((item, index) => (
                     <MenuItem key={index}>{item}</MenuItem>
                 ))}
             </MenuDropdown>
-              
+            </div>              
 
         </Menu>
     )

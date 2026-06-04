@@ -2,27 +2,27 @@ import React from "react"
 import MenuButton from "./MenuButton"
 import MenuDropdown from "./MenuDropdown"
 
+
+const MenuContext = React.createContext()
+
 export default function Menu({ children }) {
-    /**
-     * Note: leave the div className="menu" here and render
-     * the children inside that div. Notice this component will become
-     * significantly simpler by doing so 💡
-     * 
-     * Also, notice our state will be broken after we make 
-     * these changes - that's okay! We'll fix it soon. In the meantime,
-     * leave the useState() call and toggle() definitions alone. Your
-     * new version won't be using them, but we'll come back to them
-     * later.
-     */
-    const [open, setOpen] = React.useState(true)
+ 
+    const [open, setOpen] = React.useState(false)
 
     function toggle() {
         setOpen(prevOpen => !prevOpen)
+        console.log("toggle", open)
     }
 
     return (
-        <div className="menu">
-            {children}
-        </div>
+        <MenuContext.Provider value={{ open, toggle }}>
+            <div className="menu">
+                {children}
+            </div>
+        </MenuContext.Provider>
     )
 }
+
+
+
+export {MenuContext}
