@@ -8,14 +8,24 @@ const MenuContext = React.createContext()
 export default function Menu({ children }) {
  
     const [open, setOpen] = React.useState(false)
+   
+    const menuId = React.useId()
 
     function toggle() {
         setOpen(prevOpen => !prevOpen)
         console.log("toggle", open)
     }
+    function handleItemClick(event) {
+        console.log("Item clicked")
+        const selectedValue = event.target.textContent
+        console.log("Selected value:", selectedValue)
+        setOpen(false)
+    }
+   
+   
 
     return (
-        <MenuContext.Provider value={{ open, toggle }}>
+        <MenuContext.Provider value={{ open, toggle, handleItemClick, menuId }}>
             <div className="menu">
                 {children}
             </div>

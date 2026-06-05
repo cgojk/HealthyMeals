@@ -6,7 +6,7 @@ import { FaChevronDown } from "react-icons/fa";
 import CardRecipe from "../components/CardRecipe";
 import data from "../data/data.json";
 import ChoicesDropdownMenu from "../components/UI/ChoicesDropdownMenu";
-import ChoicesCooTime from "../components/UI/ChoicesCooTime";
+import ChoicesCookTime from "../components/UI/ChoicesCookTime";
 
 
 
@@ -18,16 +18,9 @@ import React, { useState } from "react";
 export default function Recipes() {
 
  const [query, setQuery] = useState("");
-  // const [filteredRecipes, setFilteredRecipes] = useState(data.recipes);
-  const [showDropdown, setShowDropdown] = useState(false);
-  
 
 
-  const toggle = (e) => {
-    e.preventDefault();
-    setShowDropdown(!showDropdown);
-        
-    }
+
 
 
   
@@ -44,7 +37,9 @@ export default function Recipes() {
 
       <div className="dropdown__menu--prepTime">
 
-   <ChoicesDropdownMenu/>
+   <ChoicesDropdownMenu 
+   
+    />
  
       </div>
      {/* <div className="dropdown-menu">
@@ -60,7 +55,7 @@ export default function Recipes() {
     </div> */}
 
      <div className="dropdown__menu--cookingTime">
-      <ChoicesCooTime/>
+      <ChoicesCookTime />
 
       {/* <div className="dropdown-menu">
                   <button className="dropdown-toggle" onClick={toggle}>
