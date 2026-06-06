@@ -33,57 +33,58 @@ const [selectedPrepTime, setSelectedPrepTime] = useState(null);
 //   return matchesCookTime && matchesPrepTime && matchesQuery;
   
 // });
-// const parseTime = (value) => {
-//   if (!value) return null;
-//   return parseInt(value); 
-// };
-
-// const filteredRecipes = data.filter(recipe => {
-//   const cookLimit = selectedCookTime ? parseTime(selectedCookTime) : null;
-//   const prepLimit = selectedPrepTime ? parseTime(selectedPrepTime) : null;
-
-//   const matchesCook = cookLimit ? recipe.cookMinutes <= cookLimit : true;
-//   const matchesPrep = prepLimit ? recipe.prepMinutes <= prepLimit : true;
-
-//   const matchesQuery = query
-//     ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
-//       recipe.ingredients.some(i =>
-//         i.toLowerCase().includes(query.toLowerCase())
-//       )
-//     : true;
-
-//   return matchesCook && matchesPrep && matchesQuery;
-// });
-
-const parse = (v) => {
-  if (!v) return null;
-  return parseInt(v.toString().replace(/[^\d]/g, ""));
+const parseTime = (value) => {
+  if (!value) return null;
+  return parseInt(value); 
 };
 
 const filteredRecipes = data.filter(recipe => {
-  const cookLimit = parse(selectedCookTime);
-  const prepLimit = parse(selectedPrepTime);
+  const cookLimit = selectedCookTime ? parseTime(selectedCookTime) : null;
+  const prepLimit = selectedPrepTime ? parseTime(selectedPrepTime) : null;
 
-  const matchesCook =
-    cookLimit !== null ? Number(recipe.cookMinutes) <= cookLimit : true;
+  const matchesCook = cookLimit ? recipe.cookMinutes <= cookLimit : true;
+  const matchesPrep = prepLimit ? recipe.prepMinutes <= prepLimit : true;
 
-  const matchesPrep =
-    prepLimit !== null ? Number(recipe.prepMinutes) <= prepLimit : true;
-
-  const matchesQuery =
-    query
-      ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
-        recipe.ingredients.some(i =>
-          i.toLowerCase().includes(query.toLowerCase())
-        )
-      : true;
+  const matchesQuery = query
+    ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
+      recipe.ingredients.some(i =>
+        i.toLowerCase().includes(query.toLowerCase())
+      )
+    : true;
 
   return matchesCook && matchesPrep && matchesQuery;
 });
 
+// const parse = (v) => {
+//   if (!v) return null;
+//   return parseInt(v.toString().replace(/[^\d]/g, ""));
+// };
+
+// const filteredRecipes = data.filter(recipe => {
+//   const cookLimit = parse(selectedCookTime);
+//   const prepLimit = parse(selectedPrepTime);
+
+//   const matchesCook =
+//     cookLimit !== null ? Number(recipe.cookMinutes) <= cookLimit : true;
+
+//   const matchesPrep =
+//     prepLimit !== null ? Number(recipe.prepMinutes) <= prepLimit : true;
+
+//   const matchesQuery =
+//     query
+//       ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
+//         recipe.ingredients.some(i =>
+//           i.toLowerCase().includes(query.toLowerCase())
+//         )
+//       : true;
+
+//   return matchesCook && matchesPrep && matchesQuery;
+// });
+
 
 console.log("Cook:", selectedCookTime);
 console.log("Prep:", selectedPrepTime);
+console.log("Query:", query);
 
   
 
