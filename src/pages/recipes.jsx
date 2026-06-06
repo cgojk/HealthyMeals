@@ -87,8 +87,9 @@ console.log("Prep:", selectedPrepTime);
 console.log("Query:", query);
 
   
+console.log("FILTERED RESULTS:", filteredRecipes);
 
- 
+ console.log("COUNT:", filteredRecipes.length);
 
   return (
     <>

@@ -10,54 +10,146 @@
 }
 .dropdown-menu {
   position: relative;
-}
-
-/* Style the dropdown button */
-.dropdown-toggle {
-  background-color: var(--neutral-0);
-  color: var(--neutral-900);
-   font: var(--font-5);
-   display:flex;
+  .dropdown-toggle {
+    background-color: var(--neutral-900);
+    color: var(--neutral-100);
+    font: var(--font-4);
+    padding:var(--spacing-200);
+    border-radius: var(--radius-10);
+    transition: background-color 0.3s ease;
+    display:flex;
     align-items:center;
-    padding:var(--spacing-100);
     justify-content:center;
-       width:100%;
-    border: none;
-   border-radius: var(--radius-6);
-  cursor: pointer;
+    width:100%;
+    border:none;
+
+    &:hover {
+        opacity:0.5;
+    }
+  }
+}
+.arrow {
+  transition: transform 0.3s ease;
 }
 
-/* Dropdown content */
-.dropdown-menu__list {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 200px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index:1000;
-  padding: var(--spacing-200);
-
-
-/* Links inside dropdown content */
- a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.arrow-open {
+  transform: rotate(180deg);
 }
 
-/* Change color of dropdown links on hover */
-.dropdown-menu__list a:hover {
-  background-color: #f1f1f1
-}
+
+// /* Dropdown content */
+// .dropdown-menu__list {
+//   display: none;
+//   position: absolute;
+//   background-color: #f9f9f9;
+//   min-width: 200px;
+//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+//   z-index:1000;
+//   padding: var(--spacing-200);
+
+
+// /* Links inside dropdown content */
+//  a {
+//   color: black;
+//   padding: 12px 16px;
+//   text-decoration: none;
+//   display: block;
+// }
+
+// /* Change color of dropdown links on hover */
+// .dropdown-menu__list a:hover {
+//   background-color: #f1f1f1
+// }
+// }
+
+// /* Show the dropdown content on hover */
+// .dropdown-menu:hover .dropdown-menu__list {
+//   display: block;
+// }
+
+// /* Change background color of dropdown button on hover */
+// .dropdown-menu:hover .dropdown-toggle {
+//   background-color: var(--neutral-100);
+// }
+
+
+
+// drpopdown menu styles
+
+.button-recipes{
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--neutral-900);
+    color: var(--neutral-100);
+    font: var(--font-4);
+    padding:var(--spacing-200);
+    border-radius: var(--radius-10);
+    transition: background-color 0.3s ease;
+    border:none;
+    cursor:pointer;
+
+    &:hover {
+        opacity:0.5;
+    }
 }
 
-/* Show the dropdown content on hover */
-.dropdown-menu:hover .dropdown-menu__list {
-  display: block;
+
+
+   .dropdown__menu--prepTime{
+    display:flex;
+    gap:var(--spacing-400);
+    
+   }
+
+
+
+
+
+
+.menu {
+    position: relative;
+    display: inline-block;
 }
 
-/* Change background color of dropdown button on hover */
-.dropdown-menu:hover .dropdown-toggle {
-  background-color: var(--neutral-100);
+.menu-button {
+    background-color: var(--neutral-0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--spacing-200);
+    padding:var(--spacing-100);
+    border-radius: var(--radius-10);
+    border:1px solid var(--neutral-300);
+
+    font: var(--font-7);
+    color: var(--neutral-900);
+}
+
+.menu-dropdown {
+    position: absolute;
+    left: 0;
+    margin-top: 3px;
+    width:100%;
+    background-color: var(--neutral-0);
+    background-color: var(--neutral-0);
+}
+
+.menu-item {
+    color: var(--neutral-900);
+    font: var(--font-7);
+    padding: var(--spacing-100);
+    cursor: pointer;
+    min-width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.menu-item:hover {
+    background-color: whitesmoke;
+}
+
+.menu-item:not(:last-child) {
+    border-bottom: 1px solid #6B7280;
 }

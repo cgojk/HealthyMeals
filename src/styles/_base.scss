@@ -81,35 +81,7 @@ main{
     }
 }
 
-.button-recipes{
-     display: inline-block;
-        
-         margin-top: var(--spacing-400);
-        background-color: var(--neutral-900);
-        font: var(--font-4);
-        color: var(--neutral-100);
-        padding:var(--spacing-200);
-        border-radius: var(--radius-10);
-        transition: background-color 0.3s ease;
 
-
-        .button-recipes:hover {
-            opacity:0.5;
-       
-    }
-
-    .button-recipes--medium{
-        padding:var(--spacing-150) var(--spacing-300);
-    }
-    .button-recipes--large{
-        padding:var(--spacing-200) var(--spacing-400);
-    }
-    .button-recipes--small{
-        padding:var(--spacing-100) var(--spacing-200);
-    }
-
-
-}
 
 .hero__image{
     margin-top:var(--spacing-500);
@@ -411,6 +383,35 @@ main{
 
 // drpopdown menu styles
 
+.button-recipes{
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--neutral-900);
+    color: var(--neutral-100);
+    font: var(--font-4);
+    padding:var(--spacing-200);
+    border-radius: var(--radius-10);
+    transition: background-color 0.3s ease;
+    border:none;
+    cursor:pointer;
+
+    &:hover {
+        opacity:0.5;
+    }
+}
+
+
+
+   .dropdown__menu--prepTime{
+    display:flex;
+    gap:var(--spacing-400);
+    
+   }
+
+
+
+
+
 
 .menu {
     position: relative;
@@ -419,6 +420,13 @@ main{
 
 .menu-button {
     background-color: white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:var(--spacing-200);
+    padding:var(--spacing-050) var(--spacing-100);
+    border-radius: var(--radius-10);
+    border:1px solid var(--neutral-300);
 }
 
 .menu-dropdown {

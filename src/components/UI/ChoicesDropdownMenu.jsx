@@ -7,11 +7,6 @@ import React from "react"
 
 
 
-
-
-
-
-
 export default function ChoicesDropdownMenu({onChange}) {
 
     const items =["0 Minutes", "5 Minutes", "10 Minutes", "15 Minutes", "Clear"]
@@ -21,7 +16,7 @@ export default function ChoicesDropdownMenu({onChange}) {
    
     return (
         <Menu>
-            <MenuButton>Max Prep Time</MenuButton>
+            <MenuButton showArrow={true}>Max Prep Time</MenuButton>
                 <div>
             <MenuDropdown>
                 {items.map((item, index) => (
