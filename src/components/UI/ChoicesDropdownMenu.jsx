@@ -12,7 +12,7 @@ import React from "react"
 
 
 
-export default function ChoicesDropdownMenu() {
+export default function ChoicesDropdownMenu({onChange}) {
 
     const items =["0 Minutes", "5 Minutes", "10 Minutes", "15 Minutes", "Clear"]
       
@@ -27,6 +27,9 @@ export default function ChoicesDropdownMenu() {
                 {items.map((item, index) => (
 
                     <MenuItem 
+                    onClick={()=>{
+                        onChange(item);
+                    }}
                     key={index}>
                        
 

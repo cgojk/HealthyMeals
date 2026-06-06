@@ -1,7 +1,7 @@
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
-import { FaChevronDown } from "react-icons/fa";
+
 // import searchbutton from "../assets/images/icon-search.svg";
 import CardRecipe from "../components/CardRecipe";
 import data from "../data/data.json";
@@ -15,13 +15,75 @@ import React, { useState } from "react";
 
 
 
-export default function Recipes() {
+export default function Recipes( ) {
+  const [selectedCookTime, setSelectedCookTime] = useState(null);
+const [selectedPrepTime, setSelectedPrepTime] = useState(null);
+
 
  const [query, setQuery] = useState("");
 
 
+// const filteredRecipes = data.filter(recipe => {
+
+//   const matchesCookTime =
+//    selectedCookTime ? recipe.cookMinutes <= parseInt(selectedCookTime) : true;
+//   const matchesPrepTime = selectedPrepTime ? recipe.prepMinutes <= parseInt(selectedPrepTime) : true;
+//   const matchesQuery = query ? recipe.title.toLowerCase().includes(query.toLowerCase()) || recipe.ingredients.some(ingredient => ingredient.toLowerCase().includes(query.toLowerCase())) : true;
+
+//   return matchesCookTime && matchesPrepTime && matchesQuery;
+  
+// });
+// const parseTime = (value) => {
+//   if (!value) return null;
+//   return parseInt(value); 
+// };
+
+// const filteredRecipes = data.filter(recipe => {
+//   const cookLimit = selectedCookTime ? parseTime(selectedCookTime) : null;
+//   const prepLimit = selectedPrepTime ? parseTime(selectedPrepTime) : null;
+
+//   const matchesCook = cookLimit ? recipe.cookMinutes <= cookLimit : true;
+//   const matchesPrep = prepLimit ? recipe.prepMinutes <= prepLimit : true;
+
+//   const matchesQuery = query
+//     ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
+//       recipe.ingredients.some(i =>
+//         i.toLowerCase().includes(query.toLowerCase())
+//       )
+//     : true;
+
+//   return matchesCook && matchesPrep && matchesQuery;
+// });
+
+const parse = (v) => {
+  if (!v) return null;
+  return parseInt(v.toString().replace(/[^\d]/g, ""));
+};
+
+const filteredRecipes = data.filter(recipe => {
+  const cookLimit = parse(selectedCookTime);
+  const prepLimit = parse(selectedPrepTime);
+
+  const matchesCook =
+    cookLimit !== null ? Number(recipe.cookMinutes) <= cookLimit : true;
+
+  const matchesPrep =
+    prepLimit !== null ? Number(recipe.prepMinutes) <= prepLimit : true;
+
+  const matchesQuery =
+    query
+      ? recipe.title.toLowerCase().includes(query.toLowerCase()) ||
+        recipe.ingredients.some(i =>
+          i.toLowerCase().includes(query.toLowerCase())
+        )
+      : true;
+
+  return matchesCook && matchesPrep && matchesQuery;
+});
 
 
+console.log("Cook:", selectedCookTime);
+console.log("Prep:", selectedPrepTime);
 
   
 
@@ -39,6 +101,8 @@ export default function Recipes() {
 
    <ChoicesDropdownMenu 
    
+onChange={setSelectedPrepTime}
+  
     />
  
       </div>
@@ -55,7 +119,13 @@ export default function Recipes() {
     </div> */}
 
      <div className="dropdown__menu--cookingTime">
-      <ChoicesCookTime />
+      <ChoicesCookTime
+    
+onChange={setSelectedCookTime}
+   
+
+/>
+    
 
       {/* <div className="dropdown-menu">
                   <button className="dropdown-toggle" onClick={toggle}>
@@ -95,7 +165,7 @@ export default function Recipes() {
 
       <div className="recipes__list">
         {query === "" ? (
-          data.map((recipe) => (
+          filteredRecipes.map((recipe) => (
             <CardRecipe
             key={recipe.id}
             title={recipe.title}
@@ -110,14 +180,7 @@ export default function Recipes() {
           
 
         ) : (
-          data.filter((recipe) => {
-            const titleMatch = recipe.title.toLowerCase().includes(query.toLowerCase());
-            const ingredientMatch = recipe.ingredients.some((ingredient) =>
-              ingredient.toLowerCase().includes(query.toLowerCase())
-            );
-            return titleMatch || ingredientMatch;
-
-          }).map((recipe) => (
+          filteredRecipes.map((recipe) => (
             <CardRecipe
               key={recipe.id}
               title={recipe.title}

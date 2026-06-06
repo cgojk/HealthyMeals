@@ -8,6 +8,7 @@ const MenuContext = React.createContext()
 export default function Menu({ children }) {
  
     const [open, setOpen] = React.useState(false)
+    
    
     const menuId = React.useId()
 
@@ -15,12 +16,14 @@ export default function Menu({ children }) {
         setOpen(prevOpen => !prevOpen)
         console.log("toggle", open)
     }
-    function handleItemClick(event) {
+    function handleItemClick() {
         console.log("Item clicked")
-        const selectedValue = event.target.textContent
-        console.log("Selected value:", selectedValue)
+        // const selectedValue = event.target.textContent
+        // console.log("Selected value:", selectedValue)
+         
         setOpen(false)
     }
+
    
    
 

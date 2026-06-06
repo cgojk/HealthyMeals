@@ -6,8 +6,8 @@ import MenuItem from "./MenuItem"
  import React from "react"
 
 
-export default function ChoicesCookTime() {
-
+export default function ChoicesCookTime({onChange}) {
+   
     const cookTime =["0 Minutes", "5 Minutes", "10 Minutes", "15 Minutes", "20 Minutes", "Clear"]
     
     
@@ -18,9 +18,13 @@ export default function ChoicesCookTime() {
             <MenuDropdown>
                 {cookTime.map((item, index) => (
                     <MenuItem key={index}
-                   
+                    onClick={()=>{
+                        onChange(item);
+                    }}
+                    
+                    >
 
-                    >{item}</MenuItem>
+                    {item}</MenuItem>
                 ))}
             </MenuDropdown>
             </div>              
