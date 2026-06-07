@@ -1,4 +1,8 @@
 import React from 'react';
+import imagepeopleservings from "../assets/images/icon-servings.svg";
+import imagepreptime from "../assets/images/icon-prep-time.svg";
+import imagecooktime from "../assets/images/icon-cook-time.svg";
+import ButtonRecipes from './UI/ButtonRecipes';
 
 
 
@@ -32,12 +36,22 @@ export default function CardRecipe({
             <h3 className="card-recipe__title">{title}</h3>
             <p className="card-recipe__description">{slug}</p>
             <div className="servingprep__cook">
-                <p className="servingprep__cook--serving">Serves: {servings}</p>
-                <p className="servingprep__cook--prep">Prep: {prepMinutes} mins</p>
-                <p className="servingprep__cook--cook">Cook: {cookMinutes} mins</p>
+                <p className="servingprep__cook--serving">
+                    <img src={imagepeopleservings} alt="Servings" />
+                    Serves: {servings}
+                </p>
+                <p className="servingprep__cook--prep">
+                    <img src={imagepreptime} alt="Prep Time" />
+                    Prep: {prepMinutes} mins
+                </p>
+                <p className="servingprep__cook--cook">
+                    <img src={imagecooktime} alt="Cook Time" />
+                    Cook: {cookMinutes} mins
+                </p>
             </div>
-            <button className="card-recipe__button">View Recipe</button>
-
+            <ButtonRecipes variant="recipes" size="small">
+                View Recipe
+            </ButtonRecipes>
         </div>
     
     )

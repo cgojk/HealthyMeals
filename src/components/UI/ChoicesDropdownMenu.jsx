@@ -17,7 +17,7 @@ export default function ChoicesDropdownMenu({onChange}) {
     return (
         <Menu>
             <MenuButton showArrow={true}>Max Prep Time</MenuButton>
-                <div>
+              
             <MenuDropdown>
                 {items.map((item, index) => (
 
@@ -32,7 +32,7 @@ export default function ChoicesDropdownMenu({onChange}) {
                     </MenuItem>
                 ))}
             </MenuDropdown>
-              </div>
+             
 
         </Menu>
     )

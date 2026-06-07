@@ -6,13 +6,15 @@ export default function ButtonRecipes
 ({children,
      className,
       size,
+      variant="recipes",
+
     
       showArrow = false,
         arrowOpen = false,
        ...rest}){
  
 
-  const allClasses = classnames(  size && `button-recipes--${size}`, className);
+  const allClasses = classnames( variant==="recipes" && "button-recipes", size && `button-recipes--${size}`, className);
    
     
    

@@ -1,33 +1,42 @@
 
+// card recipes styles
 
+.card-recipe{
+    display:flex;
+    flex-direction:column;
+    gap:var(--spacing-100);
+    border-radius: var(--radius-6);
+    border:1px solid var(--neutral-300);
+    padding:var(--spacing-200);
+    background-color: var(--neutral-0);
+
+    .card-recipe__image{
+        border-radius: var(--radius-6);
+        width:100%;
+       
+        object-fit:cover;
+    }
+    .card-recipe__content{
+        display:flex;
+        flex-direction:column;
+        gap:var(--spacing-100);
+
+        .card-recipe__title{
+            font: var(--font-4);
+            letter-spacing: var(--ls-4);
+            color: var(--neutral-900);
+}
+    }
+  }
 
 .wrapper__dropdown--menu {
     display:flex;
     gap:var(--spacing-400);
     margin-top: var(--spacing-400);
-    flex-direction:row;
+    flex-direction:column;
     padding:var(--spacing-200);
 }
-.dropdown-menu {
-  position: relative;
-  .dropdown-toggle {
-    background-color: var(--neutral-900);
-    color: var(--neutral-100);
-    font: var(--font-4);
-    padding:var(--spacing-200);
-    border-radius: var(--radius-10);
-    transition: background-color 0.3s ease;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:100%;
-    border:none;
 
-    &:hover {
-        opacity:0.5;
-    }
-  }
-}
 .arrow {
   transition: transform 0.3s ease;
 }
@@ -35,42 +44,6 @@
 .arrow-open {
   transform: rotate(180deg);
 }
-
-
-// /* Dropdown content */
-// .dropdown-menu__list {
-//   display: none;
-//   position: absolute;
-//   background-color: #f9f9f9;
-//   min-width: 200px;
-//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-//   z-index:1000;
-//   padding: var(--spacing-200);
-
-
-// /* Links inside dropdown content */
-//  a {
-//   color: black;
-//   padding: 12px 16px;
-//   text-decoration: none;
-//   display: block;
-// }
-
-// /* Change color of dropdown links on hover */
-// .dropdown-menu__list a:hover {
-//   background-color: #f1f1f1
-// }
-// }
-
-// /* Show the dropdown content on hover */
-// .dropdown-menu:hover .dropdown-menu__list {
-//   display: block;
-// }
-
-// /* Change background color of dropdown button on hover */
-// .dropdown-menu:hover .dropdown-toggle {
-//   background-color: var(--neutral-100);
-// }
 
 
 
@@ -88,27 +61,38 @@
     border:none;
     cursor:pointer;
 
-    &:hover {
-        opacity:0.5;
-    }
+   
+ 
+
+
 }
 
+.button-recipes{
+    &--small{
+        font: var(--font-7);
+        padding:var(--spacing-200);
+        border-radius: var(--radius-24);
+        align-items: center;
+        justify-content: center;
 
 
-   .dropdown__menu--prepTime{
-    display:flex;
-    gap:var(--spacing-400);
-    
-   }
-
-
-
+    }
+    &:hover{
+          background-color: var(--neutral-700);
+        border:1px solid var(--neutral-900);
+        color:var(--neutral-900);
+    }
+}
 
 
 
 .menu {
     position: relative;
     display: inline-block;
+    display:flex;
+    flex-direction:column;
+
+    
 }
 
 .menu-button {
@@ -120,18 +104,22 @@
     padding:var(--spacing-100);
     border-radius: var(--radius-10);
     border:1px solid var(--neutral-300);
-
     font: var(--font-7);
     color: var(--neutral-900);
+    width:100%;
+    cursor:pointer;
+    transition: background-color 0.3s ease;
+    
 }
 
 .menu-dropdown {
     position: absolute;
     left: 0;
-    margin-top: 3px;
+    margin-top: var(--spacing-600);
     width:100%;
     background-color: var(--neutral-0);
-    background-color: var(--neutral-0);
+    z-index:5;
+    
 }
 
 .menu-item {
@@ -150,6 +138,32 @@
     background-color: whitesmoke;
 }
 
-.menu-item:not(:last-child) {
-    border-bottom: 1px solid #6B7280;
+.search__button{
+  position:relative;
+
+  .search__icon{
+        position:absolute;
+        right: var(--spacing-200);
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        left:5px;
+        height: 20px;
+        
+    }
 }
+
+.search__input{
+    padding: var(--spacing-100);
+    border-radius: var(--radius-10);
+    border:1px solid var(--neutral-300);
+    font: var(--font-7);
+    color: var(--neutral-900);
+    width:100%;
+    transition: background-color 0.3s ease;
+     padding-left: var(--spacing-300);
+   
+  
+
+    
+  }
