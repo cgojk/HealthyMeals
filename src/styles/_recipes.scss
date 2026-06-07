@@ -1,14 +1,47 @@
 
 // card recipes styles
 
+.recipes{
+  padding:var(--spacing-150);
+    .title__recipes{
+        font: var(--font-2);
+        letter-spacing: var(--ls-2);
+        color: var(--neutral-900);
+        
+        
+        margin-top:var(--spacing-1200);
+    }
+    .recipes__text{
+        font: var(--font-6);
+        letter-spacing: var(--ls-6);
+        color: var(--neutral-600);
+        margin-bottom:var(--spacing-400);
+       
+        
+        margin-top:var(--spacing-100);
+}
+}
+.recipes__list{
+   display:flex;
+   flex-direction:column;
+    gap:var(--spacing-300);
+  
+    border-radius: var(--radius-10);
+}
 .card-recipe{
     display:flex;
     flex-direction:column;
     gap:var(--spacing-100);
-    border-radius: var(--radius-6);
+    border-radius: var(--radius-10);
     border:1px solid var(--neutral-300);
-    padding:var(--spacing-200);
+    padding:var(--spacing-100);
     background-color: var(--neutral-0);
+
+        .card-recipe__title {
+            font:var(--font-5);
+            letter-spacing: var(--ls-4);
+            color:var(--neutral-900);
+     }
 
     .card-recipe__image{
         border-radius: var(--radius-6);
@@ -16,25 +49,62 @@
        
         object-fit:cover;
     }
-    .card-recipe__content{
+    .card-recipe__description {
         display:flex;
         flex-direction:column;
         gap:var(--spacing-100);
+        color:var(--neutral-900);
+        font:var(--font-9);
+        margin-bottom:var(--spacing-150);
 
-        .card-recipe__title{
-            font: var(--font-4);
-            letter-spacing: var(--ls-4);
-            color: var(--neutral-900);
-}
+
+    
     }
   }
 
+.servingprep__cook{
+    display:grid;
+    grid-template-areas:"serving prep "
+                        "cook    . ";
+    gap:var(--spacing-200);
+    margin-bottom: var(--spacing-150);
+
+    &--serving,
+    &--prep,
+    &--cook{
+        
+        gap:var(--spacing-100);
+        font: var(--font-9);
+        letter-spacing: var(--ls-6);
+        color: var(--neutral-800);
+    }
+    &--serving{
+        grid-area: serving;
+        display:flex;
+        align-items:center;
+        gap:var(--spacing-100);
+    }
+    &--prep{
+        grid-area: prep;
+        display:flex;
+        align-items:center;
+        gap:var(--spacing-100);
+    }
+    &--cook{
+        grid-area: cook;
+        display:flex;
+        align-items:center;
+        gap:var(--spacing-100);
+   
+    
+  }
+}
 .wrapper__dropdown--menu {
     display:flex;
-    gap:var(--spacing-400);
+    gap:var(--spacing-200);
     margin-top: var(--spacing-400);
     flex-direction:column;
-    padding:var(--spacing-200);
+   
 }
 
 .arrow {
@@ -140,6 +210,8 @@
 
 .search__button{
   position:relative;
+  margin-bottom:var(--spacing-300);
+  width:100%;
 
   .search__icon{
         position:absolute;

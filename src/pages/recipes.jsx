@@ -68,8 +68,8 @@ console.log("FILTERED RESULTS:", filteredRecipes);
     <>
     <Navigation/>
     <section className="recipes">
-    <h1 className="title__hero">Explore our simple, healthy recipes</h1>
-    <p className="hero__text">Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
+    <h1 className="title__recipes">Explore our simple, healthy recipes</h1>
+    <p className="recipes__text">Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
     <div className="wrapper__dropdown--menu">
       <div className="dropdown__menu--prepTime">
       <ChoicesDropdownMenu 
@@ -91,7 +91,7 @@ console.log("FILTERED RESULTS:", filteredRecipes);
         <img src={searchbutton} alt="Search" className="search__icon" />
         <input
           type="text"
-          placeholder="  Search by name or ingredient"
+          placeholder="Search by name or ingredient"
           className="search__input"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
@@ -113,7 +113,7 @@ console.log("FILTERED RESULTS:", filteredRecipes);
             <CardRecipe
             key={recipe.id}
             title={recipe.title}
-            slug={recipe.slug}
+            overview={recipe.overview}
             image={recipe.image}
             servings={recipe.servings}
             prepMinutes={recipe.prepMinutes}
@@ -128,7 +128,7 @@ console.log("FILTERED RESULTS:", filteredRecipes);
             <CardRecipe
               key={recipe.id}
               title={recipe.title}
-            slug={recipe.slug}
+            overview={recipe.overview}
             image={recipe.image}
             servings={recipe.servings}
             prepMinutes={recipe.prepMinutes}

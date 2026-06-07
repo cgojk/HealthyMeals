@@ -13,7 +13,7 @@ export default function ChoicesCookTime({onChange}) {
     
     return (
         <Menu>
-            <MenuButton showArrow={true}>Max Cooking Time</MenuButton>
+            <MenuButton showArrow={true}>Max Cook Time</MenuButton>
             
             <MenuDropdown>
                 {cookTime.map((item, index) => (

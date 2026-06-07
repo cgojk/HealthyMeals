@@ -8,7 +8,7 @@ import ButtonRecipes from './UI/ButtonRecipes';
 
 
 export default function CardRecipe({
-    title, slug,  image={}, servings, prepMinutes, cookMinutes}) {
+    title,  image={},  overview, servings, prepMinutes, cookMinutes}) {
 
   const getImageUrl = (path) => {
     return new URL(path, import.meta.url).href;
@@ -33,21 +33,21 @@ export default function CardRecipe({
             </picture>
             
 
-            <h3 className="card-recipe__title">{title}</h3>
-            <p className="card-recipe__description">{slug}</p>
+            <h2 className="card-recipe__title">{title}</h2>
+            <p className="card-recipe__description">{overview}</p>
             <div className="servingprep__cook">
-                <p className="servingprep__cook--serving">
+                <div className="servingprep__cook--serving">
                     <img src={imagepeopleservings} alt="Servings" />
                     Serves: {servings}
-                </p>
-                <p className="servingprep__cook--prep">
+                </div>
+                <div className="servingprep__cook--prep">
                     <img src={imagepreptime} alt="Prep Time" />
                     Prep: {prepMinutes} mins
-                </p>
-                <p className="servingprep__cook--cook">
+                </div>
+                <div className="servingprep__cook--cook">
                     <img src={imagecooktime} alt="Cook Time" />
                     Cook: {cookMinutes} mins
-                </p>
+                </div>
             </div>
             <ButtonRecipes variant="recipes" size="small">
                 View Recipe
