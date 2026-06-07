@@ -1,4 +1,5 @@
-
+import React from "react";
+import ButtonRecipes from "./UI/ButtonRecipes";
 
 export default function CalltoAction() {
     return (
@@ -12,7 +13,7 @@ export default function CalltoAction() {
       </p>
 
     
-      <button className="btn">Browse recipes</button>
+      <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes>
   </div>
     )
 }

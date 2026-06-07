@@ -130,6 +130,12 @@
     transition: background-color 0.3s ease;
     border:none;
     cursor:pointer;
+    justify-content:center;
+    &:hover {
+        background-color: var(--neutral-700);
+        border:1px solid var(--neutral-900);
+        color:var(--neutral-900);
+    }
 
    
  
@@ -239,3 +245,15 @@
 
     
   }
+
+  .card-recipe__ingredients-instructions.open{
+    display:flex;
+    flex-direction:column;
+    gap:var(--spacing-100);
+    font: var(--font-9);
+    letter-spacing: var(--ls-6);
+    color: var(--neutral-800);
+  }
+.card-recipe__ingredients-instructions{
+    display:none;
+}

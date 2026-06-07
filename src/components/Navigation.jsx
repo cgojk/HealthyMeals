@@ -64,10 +64,11 @@ return (
                 onClick={handleLinkClick}
                 className="nav__items__links" href="#">Recipes</NavLink>
             </li>
+              <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes> 
         </ul>
 
             
-         <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes> 
+       
         </div>
      </nav>
     </div>
