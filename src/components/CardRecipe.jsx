@@ -4,27 +4,24 @@ import imagepreptime from "../assets/images/icon-prep-time.svg";
 import imagecooktime from "../assets/images/icon-cook-time.svg";
 import ButtonRecipes from './UI/ButtonRecipes';
 
+import {Link} from "react-router-dom";
+
 
 
 
 export default function CardRecipe({
-    title,  image={},  overview, servings, prepMinutes, cookMinutes, ingredients, instructions}) {
+   slug, title,  image={},  overview, servings, prepMinutes, cookMinutes, showLink=true }) {
 
   const getImageUrl = (path) => {
     return new URL(path, import.meta.url).href;
   };
 
   
-//  appears large image depeding of the siz oe the page if <768px it will appears small image it more thant 768 large iamge 
 
-const [openRecipes, setOopenRecipes] = React.useState(false);
 
-function toggleRecipes() {
-    setOopenRecipes(!openRecipes);
-}
+  const imageUrl =image?.large? getImageUrl(image.large)
+    : image?.small? getImageUrl(image.small): '';
 
-  const imageUrl =  getImageUrl(image.large) || getImageUrl(image.small) || '';
-   
     return (
         <div className="card-recipe">
            
@@ -54,28 +51,16 @@ function toggleRecipes() {
                     Cook: {cookMinutes} mins
                 </div>
             </div>
-            <ButtonRecipes variant="recipes" size="small" className="button-view-recipe" onClick={toggleRecipes}>
-                View Recipe
-            </ButtonRecipes>
-            {/* if the user click the button view recipe it will show the ingredients and instructions of the recipe */}
-                
-            <div className={`card-recipe__ingredients-instructions ${openRecipes ? 'open' : ''}`}>
-        
-                <h3>Ingredients:</h3>
-                <ul>
-                    {ingredients.map((ingredient, index) => (
-                        <li key={index}>{ingredient}</li>
-                    ))}
-                 </ul>  
-                <h3>Instructions:</h3>
-                <ol>
-                    {instructions.map((instruction, index) => (
-                        <li key={index}>{instruction}</li>
-                    ))}
-                </ol>
-            </div>
-            
+             
+             {showLink && (
+          
+                <Link to={`/recipes/${slug}`} className="card-recipe__link">
+                    <ButtonRecipes variant="recipes" size="small" className="button-view-recipe" >
+                        View Recipe
+                    </ButtonRecipes>
+                </Link>
+            )}
+           
         </div>
-    
     )
 }

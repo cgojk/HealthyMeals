@@ -1,7 +1,7 @@
 import React from "react";
 import heroImagedesktop from "../assets/images/image-home-hero-large.webp";
 import heroImageMobile from "../assets/images/image-home-hero-small.webp";
-import Navigation from "../components/Navigation";
+
 import iconwholefood from  "../assets/images/icon-whole-food-recipes.svg";
 import iconminimumfuss from "../assets/images/icon-minimum-fuss.svg";
 import iconsearch from "../assets/images/icon-search-in-seconds.svg";
@@ -12,7 +12,7 @@ import CalltoAction from "../components/CalltoAction";
 export default function Home() {
   return (
 <>
-    <Navigation/>
+
     <section className="hero">
           
           <h1 className="title__hero">Healthy meals, zero fuss</h1>

@@ -45,13 +45,7 @@ const filteredRecipes = data.filter(recipe => {
   return matchesCook && matchesPrep && matchesQuery;
 });
 
-if (selectedCookTime==="Clear"){
-  setSelectedCookTime(null);
-}
 
-if (selectedPrepTime==="Clear"){
-  setSelectedPrepTime(null);
-}
 
 
 
@@ -105,6 +99,7 @@ console.log("FILTERED RESULTS:", filteredRecipes);
           filteredRecipes.map((recipe) => (
             <CardRecipe
             key={recipe.id}
+              slug={recipe.slug}
             title={recipe.title}
             overview={recipe.overview}
             image={recipe.image}
@@ -121,7 +116,8 @@ console.log("FILTERED RESULTS:", filteredRecipes);
           filteredRecipes.map((recipe) => (
           <CardRecipe
           key={recipe.id}
-           title={recipe.title}
+            slug={recipe.slug}
+            title={recipe.title}
             overview={recipe.overview}
             image={recipe.image}
             servings={recipe.servings}

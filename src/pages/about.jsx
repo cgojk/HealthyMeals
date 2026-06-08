@@ -1,6 +1,6 @@
 
 import React from "react";
-import Navigation from "../components/Navigation";
+
 import Footer from "../components/Footer";
 import CalltoAction from "../components/CalltoAction";
 import imageAbout from "../assets/images/image-about-our-mission-small.webp";
@@ -17,7 +17,7 @@ export default function About() {
 
   return (
     <>
-    <Navigation/>
+  
     <section className="about ">
       <div className="hero__about">
           <div className="wrapper_text">
