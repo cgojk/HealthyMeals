@@ -120,7 +120,7 @@
     "slug": "sweet-potato-black-bean-tacos",
     "image": {
       "large": "../assets/images/sweet-potato-tacos-large.webp",
-      "small": "./assets/images/sweet-potato-tacos-small.webp"
+      "small": "../assets/images/sweet-potato-tacos-small.webp"
     },
     "overview": "Smoky roasted sweet potatoes and black beans tucked into warm tortillas.",
     "servings": 3,
