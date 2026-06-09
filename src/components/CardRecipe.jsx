@@ -3,35 +3,46 @@ import imagepeopleservings from "../assets/images/icon-servings.svg";
 import imagepreptime from "../assets/images/icon-prep-time.svg";
 import imagecooktime from "../assets/images/icon-cook-time.svg";
 import ButtonRecipes from './UI/ButtonRecipes';
+import classNames from "classnames";
+import { Link } from 'react-router-dom';
 
-import {Link} from "react-router-dom";
+
 
 
 
 
 export default function CardRecipe({
-   slug, title,  image={},  overview, servings, prepMinutes, cookMinutes, showLink=true }) {
+        slug,
+        title,
+        image={},
+        overview, 
+        servings, 
+        prepMinutes,
+         cookMinutes, 
+         showLink=true,
+         variant="default",
+            className=""
+        
+         
+    }) {
 
   const getImageUrl = (path) => {
     return new URL(path, import.meta.url).href;
   };
 
   
-
+const cardClasses =classNames("card-recipe", variant === "details" && "card-recipe--details", className);
 
   const imageUrl =image?.large? getImageUrl(image.large)
     : image?.small? getImageUrl(image.small): '';
 
     return (
-        <div className="card-recipe">
+        <div className={cardClasses}>
            
             <picture className="card-recipe__image-wrapper">
                 <source media="(max-width: 768px)" srcSet={getImageUrl(image.small)} />
                 <source media="(min-width: 769px)" srcSet={getImageUrl(image.large)} />
                  <img src={imageUrl} alt={title} className="card-recipe__image" />
-
-{/*                
-                <img src={imageUrl} alt={title} className="card-recipe__image" /> */}
             </picture>
             
 

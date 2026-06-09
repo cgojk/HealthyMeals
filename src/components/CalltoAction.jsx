@@ -1,5 +1,6 @@
 import React from "react";
 import ButtonRecipes from "./UI/ButtonRecipes";
+import { Link } from "react-router-dom";
 
 export default function CalltoAction() {
     return (
@@ -12,8 +13,9 @@ export default function CalltoAction() {
         Hit the button, pick a recipe, and get dinner on the table—fast.
       </p>
 
-    
-      <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes>
+      <Link to="/recipes">
+        <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes>
+      </Link>
   </div>
     )
 }

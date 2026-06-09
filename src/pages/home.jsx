@@ -79,7 +79,7 @@ export default function Home() {
 <section className="recipes__section">
  <CalltoAction/>
 </section>
- <Footer/>
+
       
       
    

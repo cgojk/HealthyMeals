@@ -62,6 +62,10 @@
     font: inherit;
     color: inherit;
   }
+  
+  li {
+    list-style: none;
+  }
 
   button {
     cursor: pointer;
@@ -124,3 +128,9 @@
       scroll-behavior: smooth;
     }
   }
+
+.recipe-details__arrow {
+    width: 100%;
+    max-width: 24px; 
+    height: auto;
+}

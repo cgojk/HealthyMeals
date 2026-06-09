@@ -10,9 +10,7 @@ import Recipes from "./pages/recipes";
 import RecipesDetails from "./pages/recipeDetails";
 
 import Layout from "./components/Layout";
-// import About from "./pages/about";
-// import Recipe from "./pages/recipe";
-// import Recipes from "./pages/recipes";
+
 
 
 
@@ -22,19 +20,15 @@ export default function App() {
     <BrowserRouter>
     
       <Routes>
-        <Route element ={<Layout/>}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/about" element={<About /> */}
-      
-             <Route path="/recipes" element={<Recipes />} />
-              <Route path="/recipes/:slug" element={<RecipesDetails />} />
-             {/* <Route path="/recipes" element={<Recipes />} /> */} 
-
-             
-         </Route>
+        <Route element={<Layout />}>
+  <Route path="/" element={<Home />} />
+  <Route path="/home" element={<Home />} />
+  <Route path="/about" element={<About />} />
+  <Route path="/recipes" element={<Recipes />} />
+  <Route path="/recipes/:slug" element={<RecipesDetails />} />
+</Route>
+       
       </Routes>
-
     </BrowserRouter>
   );
 }

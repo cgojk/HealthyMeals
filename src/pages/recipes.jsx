@@ -134,7 +134,7 @@ console.log("FILTERED RESULTS:", filteredRecipes);
 
     </section>
     <CalltoAction/>
-    <Footer/>
+  
 
     </>
   )

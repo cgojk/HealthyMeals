@@ -22,7 +22,7 @@ return (
 
 <header className="header">
 <div className="header__inner">
-        <Link to="/">
+        <Link to="/home" className="nav-logo-link">
         <img src={logo} className=" nav-logo" alt=" Healthy meals" />
        </Link>
 
@@ -43,26 +43,22 @@ return (
   <nav className="navigation" aria-label="homepage Navigation">
         <div className="container__items--navigation">
         <ul className={`nav__list ${menuOpen ? "open" : ""}`}>
-             {/* <li className="nav-logo">
-                <Link to="/">
-                <img src={logo} className="mobile-logo nav-logo" alt="Healthy meals logo" />
-                </Link>
-          </li> */}
+           
             <li className="nav__items">
 
                 <NavLink to="/home" 
                 onClick={handleLinkClick}
-                className="nav__items__links " href="#">Home</NavLink>
+                className="nav__items__links " >Home</NavLink>
             </li>
             <li className="nav__items">
                 <NavLink to="/about" 
                 onClick={handleLinkClick}
-                className="nav__items__links" href="#">About</NavLink>
+                className="nav__items__links">About</NavLink>
             </li>
             <li className="nav__items">
                 <NavLink to="/recipes" 
                 onClick={handleLinkClick}
-                className="nav__items__links" href="#">Recipes</NavLink>
+                className="nav__items__links" >Recipes</NavLink>
             </li>
               <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes> 
         </ul>

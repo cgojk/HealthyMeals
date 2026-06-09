@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Footer from "../components/Footer";
+
 import CalltoAction from "../components/CalltoAction";
 import imageAbout from "../assets/images/image-about-our-mission-small.webp";
 import imageAboutDesktop from "../assets/images/image-about-our-mission-large.webp";
@@ -103,7 +103,7 @@ export default function About() {
      <CalltoAction/>
     </section>
   
-    <Footer/>
+  
     </>
     
   )
