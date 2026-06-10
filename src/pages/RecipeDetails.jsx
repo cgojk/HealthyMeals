@@ -49,7 +49,7 @@ console.log("All recipes:", data);
 console.log("Found recipe:", recipe);
   return (
     <>
-<section className="recipe-details-section">
+<section className="recipe-details-section container">
 
    <nav className="breadcrumb">
        <Link className="breadcrumb__link" to="/recipes">
@@ -58,8 +58,8 @@ console.log("Found recipe:", recipe);
        <span> / </span>
        <span className="breadcrumb__current">{recipe.title}</span>
    </nav>
-
-    <div className="recipe-details">
+<div className="wrapper__cardrecipeallcontent">
+  <div className="recipe-details--choicecard">
 
       {/* reuse card for header */}
     <CardRecipe
@@ -74,7 +74,7 @@ console.log("Found recipe:", recipe);
         showLink={false}
         variant="details"
     />
-    </div>
+</div>
 
 <div className="recipe-details__ingredients-instructions">
   <div className="recipe-details__ingredients">
@@ -111,11 +111,12 @@ console.log("Found recipe:", recipe);
           ))}
         </ul>
       </div>
-      </div>
+</div>
+</div>
   
 </section>
 
-    <section className="other__recipes">
+    <section className="other__recipes container">
 
         <h2 className="other__recipes--title">Other recipes you might like</h2>
         <div className="other__recipes--list">

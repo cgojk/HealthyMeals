@@ -1218,4 +1218,15 @@ span.minutes::before {
     flex-direction: row;
     align-items: center;
   }
+  .recipes .title__recipes {
+    align-items: center;
+  }
+  .recipes .recipes__text {
+    max-inline-size: none;
+    align-items: center;
+  }
+  .wrapper__dropdown--menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }/*# sourceMappingURL=index.css.map */

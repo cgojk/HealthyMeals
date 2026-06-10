@@ -52,13 +52,27 @@
         padding:var(--spacing-100);
     }
   
-  
+//   ===queries reipes styles====
+.recipes{
+    
+
+    .title__recipes{
+      text-align:center;
+    }
+    .recipes__text{
+            max-inline-size: none;
+            text-align: center;;
+    }
+
+}
+
+
 
 }
 
 @media only screen and (min-width: 1200px) {
   
- 
+//  home page styles queries
 
 .service__list{
     display:grid;
@@ -70,6 +84,41 @@
     flex-direction:row;
     align-items:center;
 }
+//  recipes styles queries
+.recipes{
+    
+
+    .title__recipes{
+      text-align:center;
+    }
+    .recipes__text{
+            max-inline-size: none;
+            text-align: center;;
+    }
+
+}
+.wrapper__dropdown--menu{
+    
+   display:grid;
+   grid-template-columns: repeat(3, 1fr);
+}
+
+// styling recipe details page
+.other__recipes{
 
 
-}  
+.other__recipes--list{
+
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-direction:row;
+    gap:var(--spacing-300);
+} 
+} 
+
+.wrapper__cardrecipeallcontent{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    gap:var(--spacing-500);
+}
+}
