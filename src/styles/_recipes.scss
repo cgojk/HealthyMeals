@@ -22,9 +22,9 @@
 }
 }
 .recipes__list{
-   display:flex;
-   flex-direction:column;
-    gap:var(--spacing-300);
+   display:grid;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap:var(--spacing-300);
   
     border-radius: var(--radius-10);
 }
@@ -107,8 +107,25 @@
     
   }
 }
+.not-found{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:var(--spacing-300);
+    padding:var(--spacing-150);
 
-
+    .not-found__title{
+        font: var(--font-2);
+        letter-spacing: var(--ls-2);
+        color: var(--neutral-900);
+    }
+    .not-found__description{
+        font: var(--font-6);
+        letter-spacing: var(--ls-6);
+        color: var(--neutral-600);
+        text-align:center;
+}
+}
 // ===========================styles  menu dropdown==============================
 .wrapper__dropdown--menu {
     display:flex;
@@ -149,8 +166,6 @@
 
    
  
-
-
 }
 .card-recipe__link{
   width:100%;
@@ -362,26 +377,19 @@
              color: var(--neutral-900);
           
         }
+      }
 
-        .list__details_ingredients{
-            display:flex;
-            flex-direction:column;
-            gap:var(--spacing-100);
-            
-        }
-
-       .ing__item{
+             .ing__item{
         display:flex;
         gap:var(--spacing-100);
          color: var(--neutral-900);
+         font:var(--font-6);
+         letter-spacing: var(--ls-6);
 
-        .ing__item--list{
-          font:var(--font-6);
-          letter-spacing: var(--ls-6);
-        }
+        
        }
 
-    }
+    
 
     .recipe-details__instructions{
         display:flex;
@@ -394,24 +402,29 @@
             letter-spacing: var(--ls-4);
             color: var(--neutral-900);
         }
-
-        .list__details_instructions{
-            display:flex;
-            flex-direction:column;
-            gap:var(--spacing-100);
-            
-        }
-
-       .inst__item{
+             .inst__item{
         display:flex;
         gap:var(--spacing-100);
          color: var(--neutral-900);
-       
-
-        .inst__item--list{
           font:var(--font-6);
           letter-spacing: var(--ls-6);
-        }
+       
+        
        }
       }
     
+.other__recipes{
+    margin-top: var(--spacing-600);
+    padding:var(--spacing-200);
+    .other__recipes--title{
+        font: var(--font-4);
+        letter-spacing: var(--ls-4);
+        color: var(--neutral-900);
+        margin-bottom: var(--spacing-300);
+    }
+    .other__recipes--list{
+        display:flex;
+        gap:var(--spacing-300);
+        flex-direction:column;
+    }
+  }

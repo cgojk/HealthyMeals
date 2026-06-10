@@ -6,29 +6,34 @@ import iconwholefood from  "../assets/images/icon-whole-food-recipes.svg";
 import iconminimumfuss from "../assets/images/icon-minimum-fuss.svg";
 import iconsearch from "../assets/images/icon-search-in-seconds.svg";
 import introserviceimage from "../assets/images/image-home-real-life-small.webp";
-import Footer from "../components/Footer";
+import introserviceimagedesktop from "../assets/images/image-home-real-life-large.webp";
+
 import CalltoAction from "../components/CalltoAction";
 
 export default function Home() {
   return (
 <>
 
-    <section className="hero">
+    <section className="hero  ">
           
-          <h1 className="title__hero">Healthy meals, zero fuss</h1>
+          <h1 className="title__hero ">Healthy meals, zero fuss</h1>
           <p className="hero__text">
             Discover eight quick, whole-food recipes that you can cook 
             tonight—no processed junk, no guesswork.
           </p>
           <button className="btn">Start exploring</button>
-          <picture>
-            <source media="(max-width: 768px)" srcSet={heroImageMobile} />
-            <source media="(min-width: 769px)" srcSet={heroImagedesktop} />
-            <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" />
+          <picture className="hero__picture container" aria-label="Hero image showing a healthy meal">
+           
+            <source media="(min-width:768px)"
+             srcSet={heroImagedesktop} />
+
+             
+               <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" /> 
+            {/* <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" /> */}
           </picture>
     </section>
 
-    <section className="service ">
+    <section className="service container ">
       <h2 className="service__title">What you'll get</h2>
       <ul className="service__list">
         <li className="service__item">
@@ -60,11 +65,11 @@ export default function Home() {
       </ul>
 </section>
 
-<section className="intro__services">
+<section className="intro__services container">
+  <div className="description__intro--services">
       <h2 className="intro__subtitle">Built for real life</h2>
       <p className="intro__description">
-        Cooking shouldn't be complicated. These recipes come in under 
-        <strong> 30 minutes</strong> of active time, fit busy schedules, and taste good 
+        Cooking shouldn't be complicated. These recipes come in under  <span  className="minutes">  30 minutes </span>  of active time, fit busy schedules, and taste good 
         enough to repeat. 
        
  </p>
@@ -72,11 +77,15 @@ export default function Home() {
         Whether you're new to the kitchen or just need fresh ideas, 
         we've got you covered.
       </p>
+</div>
 
-  <img src={introserviceimage} alt="Intro service" loading ="lazy"className="intro__services__image" />
+  <picture className="intro__services__image" aria-label="Intro service image">
+    <source media="(min-width: 768px)" srcSet={introserviceimagedesktop} />
+    <img src={introserviceimage} alt="Intro service" loading="lazy" />
+  </picture>
 </section>
 
-<section className="recipes__section">
+<section className="recipes__section ">
  <CalltoAction/>
 </section>
 

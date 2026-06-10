@@ -79,6 +79,7 @@ picture,
 svg,
 video {
   display: block;
+  max-inline-size: 100%;
   block-size: auto;
 }
 
@@ -154,6 +155,17 @@ p {
     scroll-behavior: smooth;
   }
 }
+.recipe-details__arrow {
+  width: 100%;
+  max-width: 24px;
+  height: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 :root {
   --neutral-900:hsl(164,45%,16%);
   --neutral-800:hsl(165,32%,20%);
@@ -357,8 +369,7 @@ main {
   display: inline-block;
   width: 40%;
   position: absolute;
-  left: 0;
-  height: 30px;
+  height: 40px;
   top: 15px;
   background-color: var(--orange-300);
   margin-top: var(--spacing-100);
@@ -511,14 +522,10 @@ main {
 }
 .service .service__title {
   font: var(--font-2);
+  margin-top: var(--spacing-200);
   letter-spacing: var(--ls-2);
   color: var(--neutral-900);
-  margin-bottom: var(--spacing-200);
-}
-.service .service__list {
-  display: flex;
-  gap: var(--spacing-300);
-  flex-direction: column;
+  margin-bottom: var(--spacing-600);
 }
 .service .service__list .service__item .service__item__icon {
   border: 5px solid var(--neutral-0);
@@ -550,21 +557,43 @@ main {
   flex-direction: column;
   padding: var(--spacing-200);
   gap: var(--spacing-300);
-  margin-top: var(--spacing-400);
+  margin-top: var(--spacing-200);
 }
 .intro__services .intro__services__image {
   border: 5px solid var(--neutral-0);
   border-radius: var(--radius-6);
 }
 .intro__services .intro__subtitle {
+  margin-top: var(--spacing-400);
   font: var(--font-2);
   letter-spacing: var(--ls-2);
   color: var(--neutral-900);
 }
 .intro__services .intro__description {
+  margin-top: var(--spacing-300);
+  font: var(--font-6);
   font: var(--font-6);
   letter-spacing: var(--ls-6);
   color: var(--neutral-600);
+}
+
+span.minutes {
+  position: relative;
+  display: inline-block;
+  font: var(--font-6);
+  letter-spacing: var(--ls-6);
+  color: var(--neutral-900);
+  font-weight: 900;
+}
+span.minutes::before {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  position: absolute;
+  height: 20px;
+  top: 50%;
+  background-color: var(--orange-300);
+  z-index: -1;
 }
 
 .recipes__section {
@@ -578,7 +607,7 @@ main {
   gap: var(--spacing-300);
   margin-top: var(--spacing-500);
   flex-direction: column;
-  background-color: var(--neutral-300);
+  background-color: var(--neutral-200);
   padding: var(--spacing-300);
   border-radius: var(--radius-16);
 }
@@ -608,6 +637,11 @@ main {
 }
 .call-to-action .btn:hover {
   opacity: 0.5;
+}
+
+.cta__fork-pattern,
+.cta__knife-pattern {
+  display: none;
 }
 
 .footer {
@@ -770,8 +804,8 @@ main {
 }
 
 .recipes__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-300);
   border-radius: var(--radius-10);
 }
@@ -841,6 +875,25 @@ main {
   display: flex;
   align-items: center;
   gap: var(--spacing-100);
+}
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-300);
+  padding: var(--spacing-150);
+}
+.not-found .not-found__title {
+  font: var(--font-2);
+  letter-spacing: var(--ls-2);
+  color: var(--neutral-900);
+}
+.not-found .not-found__description {
+  font: var(--font-6);
+  letter-spacing: var(--ls-6);
+  color: var(--neutral-600);
+  text-align: center;
 }
 
 .wrapper__dropdown--menu {
@@ -1060,22 +1113,16 @@ main {
   gap: var(--spacing-200);
   margin-top: var(--spacing-200);
 }
-.recipe-details__ingredients .recipe__details_title {
+.recipe-details__ingredients .recipe-details__title {
   font: var(--font-4);
-  letter-spacing: var(--ls-2);
+  letter-spacing: var(--ls-4);
   color: var(--neutral-900);
 }
-.recipe-details__ingredients .list__details_ingredients {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-100);
-}
-.recipe-details__ingredients .ing__item {
+
+.ing__item {
   display: flex;
   gap: var(--spacing-100);
   color: var(--neutral-900);
-}
-.recipe-details__ingredients .ing__item .ing__item--list {
   font: var(--font-6);
   letter-spacing: var(--ls-6);
 }
@@ -1088,20 +1135,87 @@ main {
 }
 .recipe-details__instructions .Instructions__title {
   font: var(--font-4);
-  letter-spacing: var(--ls-2);
+  letter-spacing: var(--ls-4);
   color: var(--neutral-900);
-}
-.recipe-details__instructions .list__details_instructions {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-100);
 }
 .recipe-details__instructions .inst__item {
   display: flex;
   gap: var(--spacing-100);
   color: var(--neutral-900);
-}
-.recipe-details__instructions .inst__item .inst__item--list {
   font: var(--font-6);
   letter-spacing: var(--ls-6);
+}
+
+.other__recipes {
+  margin-top: var(--spacing-600);
+  padding: var(--spacing-200);
+}
+.other__recipes .other__recipes--title {
+  font: var(--font-4);
+  letter-spacing: var(--ls-4);
+  color: var(--neutral-900);
+  margin-bottom: var(--spacing-300);
+}
+.other__recipes .other__recipes--list {
+  display: flex;
+  gap: var(--spacing-300);
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 700px) {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero .title__hero {
+    max-inline-size: none;
+  }
+  .intro__services {
+    margin-top: var(--spacing-600);
+  }
+  .service__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-600);
+  }
+  .call-to-action {
+    position: relative;
+    overflow: hidden;
+  }
+  .cta__fork-pattern {
+    display: block;
+    position: absolute;
+    bottom: -37px;
+    left: -40px;
+    width: 250px;
+    height: 250px;
+  }
+  .cta__knife-pattern {
+    display: block;
+    position: absolute;
+    right: -30px;
+    bottom: 20;
+    width: 250px;
+    height: 250px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--spacing-100);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .service__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-500);
+  }
+  .intro__services {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }/*# sourceMappingURL=index.css.map */

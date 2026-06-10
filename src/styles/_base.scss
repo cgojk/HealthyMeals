@@ -3,7 +3,6 @@ body {
     background-color:var(--neutral-100);
     color: var(--clr-neutral-600);
     font-family: var(--ff-nunito);
-
     display:flex;
     flex-direction: column;
 
@@ -47,8 +46,8 @@ main{
         display:inline-block;
         width:40%;
         position:absolute;
-        left:0;
-        height: 30px;
+       
+        height: 40px;
         top:15px;
         background-color: var(--orange-300);
         margin-top: var(--spacing-100);
@@ -233,14 +232,13 @@ main{
 
     .service__title{
         font: var(--font-2);
+        margin-top:var(--spacing-200);
         letter-spacing: var(--ls-2);
         color: var(--neutral-900);
-        margin-bottom: var(--spacing-200);
+        margin-bottom: var(--spacing-600);
     }
     .service__list{
-        display:flex;
-        gap:var(--spacing-300);
-        flex-direction:column;
+       
         
         .service__item{
 
@@ -279,9 +277,9 @@ main{
 .intro__services{
     display:flex;
     flex-direction:column;
-    padding:var(--spacing-200);
+   padding:var(--spacing-200);
        gap:var(--spacing-300);
-    margin-top:var(--spacing-400);
+    margin-top:var(--spacing-200);
    
 
 
@@ -292,18 +290,42 @@ main{
         
     }
     .intro__subtitle{
+        margin-top:var(--spacing-400);
         font: var(--font-2);
         letter-spacing: var(--ls-2);
         color: var(--neutral-900);
     }
     .intro__description{
+        margin-top:var(--spacing-300);
+         font: var(--font-6);
         font: var(--font-6);
         letter-spacing: var(--ls-6);
         color: var(--neutral-600);
        
-        
     }
-}
+}      
+    span.minutes{
+        position:relative;
+        display:inline-block;
+        font: var(--font-6);
+        letter-spacing: var(--ls-6);
+        color: var(--neutral-900);
+        font-weight:900;
+
+        &::before{
+            content:"";
+            display:inline-block;
+            width:100%;
+            position:absolute;
+            height: 20px;
+            top:50%;
+            background-color: var(--orange-300);
+           
+            z-index:-1;
+        }
+    }
+
+
 
 // seciton call to action container================
 .recipes__section{
@@ -316,7 +338,7 @@ main{
     gap:var(--spacing-300);
     margin-top:var(--spacing-500);
     flex-direction:column;
-    background-color:var(--neutral-300);
+    background-color:var(--neutral-200);
     padding:var(--spacing-300);
      border-radius:var(--radius-16);
 
@@ -350,6 +372,11 @@ main{
 
 
 }  
+}
+.cta__fork-pattern,
+.cta__knife-pattern{
+    
+   display:none;
 }
 
 .footer{

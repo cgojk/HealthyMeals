@@ -7,8 +7,10 @@ export default function Layout() {
     return (
         <>
             <Navigation />
-            <Outlet />
-             <Footer/>
+           
+                <Outlet />
+           
+            <Footer/>
         </>
     )
 }

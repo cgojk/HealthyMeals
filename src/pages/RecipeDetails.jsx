@@ -40,10 +40,7 @@ const getOtherRecipes = (shuffledData, slug) => {
     .filter((r) => r.slug !== slug)
     .slice(0, 3);
 };
-// const otherRecipes = data
-//   .filter((r) => r.slug !== slug)
-//   .sort(() => Math.random() - 0.5)
-//   .slice(0, 3);
+
 
 
 
@@ -83,55 +80,40 @@ console.log("Found recipe:", recipe);
   <div className="recipe-details__ingredients">
         {/* ingredients */}
         <h2 className="recipe-details__title">Ingredients</h2>
-        {/* <ul className="list__details_ingredients">
-          {recipe.ingredients.map((item, i) => (
-            <div className="ing__item">
-                <img className="recipe-details__arrow" src={arrow} alt="Arrow" />
-            <li className="ing__item--list"
-             key={i}>
-              
-              {item}
-            </li>
-            </div>
-          ))}
-        </ul> */}
-
         <ul>
-           {recipe.ingredients.map((item, i) => (
-           <li className="ing__item" key={i}>
-         <img
-           className="recipe-details__arrow"
-           src={arrow}
-           alt="arrow separate items ingredients"
-      />
-      {item}
-    </li>
-  ))}
-</ul>
+                    {recipe.ingredients.map((item, i) => (
+                    <li className="ing__item" key={i}>
+                    <img
+                    className="recipe-details__arrow"
+                    src={arrow}
+                    alt="arrow separate items ingredients"
+                />
+                {item}
+                </li>
+            ))}
+        </ul>
 
       </div>
 
       {/* instructions */}
       <div className="recipe-details__instructions">
         <h2 className="Instructions__title">Instructions</h2>
-        <ul className="list__details_instructions">
+        <ul>
           {recipe.instructions.map((step, i) => (
-            <div className="inst__item" key={i}>
-                  <img className="recipe-details__arrow" src={arrow} alt="Arrow" />
-              <li className="inst__item--list" key={i}>
-              
-                {step}
+            <li className="inst__item" key={i}>
+                  <img className="recipe-details__arrow" 
+                  src={arrow} 
+                  alt="Arrow"
+                   />
+             {step}
               </li>
-            </div>
+          
           ))}
         </ul>
       </div>
       </div>
-
   
-
-
-    </section>
+</section>
 
     <section className="other__recipes">
 

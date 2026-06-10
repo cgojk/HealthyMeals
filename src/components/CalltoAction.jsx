@@ -1,11 +1,13 @@
 import React from "react";
 import ButtonRecipes from "./UI/ButtonRecipes";
 import { Link } from "react-router-dom";
+import forkpattern from "../assets/images/pattern-fork.svg";
+import knifepattern from "../assets/images/pattern-knife.svg";
 
 export default function CalltoAction() {
     return (
         
-
+<>
 
 <div className="call-to-action">
  <h2 className="call-to-action__title"> Ready to cook smarter? </h2>
@@ -16,6 +18,12 @@ export default function CalltoAction() {
       <Link to="/recipes">
         <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes>
       </Link>
-  </div>
+
+
+   <img className="cta__fork-pattern" src={forkpattern} alt="fork pattern" />
+  <img className="cta__knife-pattern" src={knifepattern} alt="knife pattern" />
+</div>
+            </>
+            
     )
 }
