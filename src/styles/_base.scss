@@ -26,8 +26,22 @@ main{
 .hero{
        margin-top:var(--spacing-600);
        padding:var(--spacing-200);
-      
+       position: relative;
+       overflow: hidden;
+ 
+    
 
+.hero__background-pattern {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100vw;     // viewport width
+  max-width: none;
+  bottom: 0;
+  z-index: -1;
+}
+      
+    
    
     .title__hero{
         font: var(--font-1);
@@ -82,11 +96,16 @@ main{
 
 
 
+ 
+
+
+
 .hero__image{
     margin-top:var(--spacing-500);
     border:5px solid var(--neutral-0);
     border-radius: var(--radius-6);
 }
+
 
 //=========================== navigaiton============================
 

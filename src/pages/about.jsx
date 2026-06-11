@@ -10,14 +10,14 @@ import imagebeyonplateDesktop from  "../assets/images/image-about-beyond-the-pla
 
 import InfoItemAbout from "../components/InfoItemAbout";
 import dataInfoAbout from "../data/Aboutdatainfo.js";
+import patteroverhero from "../assets/images/pattern-squiggle-2.svg";
 
 export default function About() {
 
 
 
   return (
-    <>
-  
+   <section className="wrapperabout container">
     <section className="about ">
       <div className="hero__about">
           <div className="wrapper_text">
@@ -34,19 +34,26 @@ export default function About() {
               ingredients and straightforward steps.
             </p>
           </div>
-          <div className="wrapper__image">
+         <div className="wrapper__image">
+            <img className="patternoverhero" src={patteroverhero} alt="pattern over hero" />
+
             <picture>
-              <source media="(max-width: 768px)" srcSet={imageAbout} />
-              <source media="(min-width: 769px)" srcSet={imageAboutDesktop} />
+            <source media="(min-width:700px)" 
+              srcSet={imageAboutDesktop} />
               <img src={imageAbout} alt="About" loading="lazy" className="about__image" />
             </picture>
-          </div>
+            </div>
+         
       </div>
       </section>
 
       <section className="about__section--info">
+
+        <div className="wrapping__title">
  
           <h2 className="about__subtitle">Why we exist</h2>
+          </div>  
+          <div className="wrapper__about--info">      
           <ul className="about__text">
 
             {dataInfoAbout.slice(0,3).map((item) => (
@@ -59,6 +66,7 @@ export default function About() {
             ))}
                                      
           </ul>
+          </div>
  </section>
 
 
@@ -104,7 +112,7 @@ export default function About() {
     </section>
   
   
-    </>
+    </section>
     
   )
 }

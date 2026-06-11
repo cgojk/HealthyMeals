@@ -75,6 +75,8 @@ const cardClasses =classNames("card-recipe", variant === "details" && "card-reci
                     </ButtonRecipes>
                 </Link>
             )}
+
+            
            
         </div>
     )

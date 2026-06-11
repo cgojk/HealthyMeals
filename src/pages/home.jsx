@@ -7,6 +7,7 @@ import iconminimumfuss from "../assets/images/icon-minimum-fuss.svg";
 import iconsearch from "../assets/images/icon-search-in-seconds.svg";
 import introserviceimage from "../assets/images/image-home-real-life-small.webp";
 import introserviceimagedesktop from "../assets/images/image-home-real-life-large.webp";
+import imagebehindhero from "../assets/images/pattern-squiggle-1.svg";
 
 import CalltoAction from "../components/CalltoAction";
 
@@ -14,7 +15,13 @@ export default function Home() {
   return (
 <>
 
-    <section className="hero  ">
+    <section className="hero ">
+
+       <img
+    src={imagebehindhero}
+    alt=""
+    className="hero__background-pattern"
+  />
           
           <h1 className="title__hero ">Healthy meals, zero fuss</h1>
           <p className="hero__text">
@@ -22,15 +29,16 @@ export default function Home() {
             tonight—no processed junk, no guesswork.
           </p>
           <button className="btn">Start exploring</button>
-          <picture className="hero__picture container" aria-label="Hero image showing a healthy meal">
-           
-            <source media="(min-width:768px)"
-             srcSet={heroImagedesktop} />
-
+        
+          
+              <picture className="hero__picture container" aria-label="Hero image showing a healthy meal">
+              <source media="(min-width:700px)"
+                srcSet={heroImagedesktop} />
+                 <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" /> 
+                
+              </picture>
              
-               <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" /> 
-            {/* <img src={heroImageMobile} loading="lazy" alt="Hero" className="hero__image" /> */}
-          </picture>
+          
     </section>
 
     <section className="service container ">
@@ -73,7 +81,7 @@ export default function Home() {
         enough to repeat. 
        
  </p>
- <p className="intro__description">
+ <p className="intro__description ">
         Whether you're new to the kitchen or just need fresh ideas, 
         we've got you covered.
       </p>

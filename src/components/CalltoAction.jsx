@@ -9,7 +9,7 @@ export default function CalltoAction() {
         
 <>
 
-<div className="call-to-action">
+<div className="call-to-action container">
  <h2 className="call-to-action__title"> Ready to cook smarter? </h2>
       <p className="call-to-action__description">
         Hit the button, pick a recipe, and get dinner on the table—fast.

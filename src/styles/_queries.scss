@@ -84,6 +84,22 @@
     flex-direction:row;
     align-items:center;
 }
+
+
+// abput page queries styles
+.hero__about{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:var(--spacing-500);
+}
+.about__section--info,
+.about__section--beyond
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:var(--spacing-500);
+}
+
 //  recipes styles queries
 .recipes{
     
@@ -120,5 +136,27 @@
     display:grid;
     grid-template-columns: 2fr 1fr;
     gap:var(--spacing-500);
+}
+.hero__image{
+    width: 100%;
+    aspect-ratio: 2.2/1;
+    object-fit: cover
+}
+.wrapper__image{
+        border-radius:var(--radius-20);
+        overflow:hidden;
+        position:relative;
+    
+
+ .patternoverhero {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: auto;
+  z-index: 9999;
+  border: 2px solid red;
+}
+
 }
 }

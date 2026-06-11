@@ -67,12 +67,15 @@ console.log("Found recipe:", recipe);
         key={recipe.id}
         title={recipe.title}
         image={recipe.image}
+
         overview={recipe.overview}
         servings={recipe.servings}
         prepMinutes={recipe.prepMinutes}
         cookMinutes={recipe.cookMinutes}
         showLink={false}
         variant="details"
+
+        
     />
 </div>
 

@@ -1,3 +1,10 @@
+
+// styling about page====================================
+
+
+
+
+
 .about{
     padding:var(--spacing-200);
     margin-top:var(--spacing-800);
@@ -34,6 +41,12 @@
     margin-top: var(--spacing-500);
     border-radius:var(--radius-20);
     overflow:hidden;
+    position:relative;
+
+    .patternoverhero{
+       display:none;
+       position:absolute;
+    }
     
     .about__image
    {
@@ -41,6 +54,7 @@
         height:100%;
         object-fit:cover;
     }
+
 }
 
 .about__section--info{
