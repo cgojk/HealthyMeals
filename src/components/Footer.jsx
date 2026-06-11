@@ -7,7 +7,7 @@ import iconbluesky from "../assets/images/icon-bluesky.svg";
 
 export default function Footer(){
     return(
-         <section className="footer">
+         <section className="footer container">
     <ul className="footer__links">
       <li className="footer__item">
         <a href="#" className="footer__link">

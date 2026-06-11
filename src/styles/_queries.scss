@@ -66,13 +66,19 @@
 
 }
 
-
+.menu-btn {
+    display: none;
+  }
+ 
 
 }
 
 @media only screen and (min-width: 1200px) {
   
 //  home page styles queries
+
+
+
 
 .service__list{
     display:grid;
@@ -84,7 +90,42 @@
     flex-direction:row;
     align-items:center;
 }
+// navigation styles
+ .container__items--navigation{
+   
 
+    .nav__list {
+        display:flex;
+    position: static;
+    flex-direction: row;
+    height: auto;
+    background: none;
+    width: auto;
+    padding-top:0;
+    align-items: center;
+    justify-content:center;
+   
+   
+     
+
+  }  .nav__items {
+    margin-left: var(--spacing-400);
+    align-self: center;
+    font:var(--font-7);
+    color:var(--neutral-900);
+
+    .nav__items__links {
+        color:var(--neutral-900);
+        font: var(--font-7);
+    }
+  }
+
+  .button-recipes{
+    padding:var(--spacing-100) var(--spacing-200);
+    border-radius: var(--radius-10);
+    align-self: center;
+  }
+}
 
 // abput page queries styles
 .hero__about{

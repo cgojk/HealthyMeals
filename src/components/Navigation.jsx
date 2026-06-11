@@ -20,7 +20,7 @@ export default function Navigation(){
 
 return (
 
-<header className="header">
+<header className="header max-container">
 <div className="header__inner">
         <Link to="/home" className="nav-logo-link">
         <img src={logo} className=" nav-logo" alt=" Healthy meals" />
