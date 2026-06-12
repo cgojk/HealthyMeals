@@ -457,43 +457,39 @@ main {
   background-color: var(--neutral-300);
 }
 
-.container__items--navigation .nav__list {
+.navigation {
   position: fixed;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--neutral-0);
-  gap: var(--spacing-150);
   top: 70px;
-  padding: var(--spacing-200);
-  right: -100%; /* hidden off screen */
+  right: -100%;
   width: 100%;
-  height: 22vh;
   transition: right 0.3s ease;
-  border-radius: var(--radius-6);
-  font: var(--font-2);
+  background-color: var(--neutral-0);
+  padding: var(--spacing-200);
 }
 
 .nav__list .nav__items {
   display: flex;
   flex-direction: column;
-  align-self: flex-start;
 }
 
-.container__items--navigation .nav__list.open {
+.navigation .button-recipes {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.navigation.open {
   right: 0; /* slide in */
 }
 
-.navigation {
+.nav__list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2em;
+  flex-direction: column;
 }
 
 .nav__list__item a {
   color: var(--neutral-900);
-  font: var(--font-5);
+  font: var(--font-7);
+  text-decoration: none;
 }
 
 .nav__list__item {
@@ -501,14 +497,14 @@ main {
   font-size: 1.1rem;
 }
 
-.nav__items__links {
+.navigation .nav__items__links {
   text-decoration: none;
   cursor: pointer;
-  font: var(--font-5);
+  font: var(--font-7);
   position: relative;
+  display: inline-block;
 }
-
-.nav__items__links::after {
+.navigation .nav__items__links::after {
   content: "";
   position: absolute;
   left: 0;
@@ -521,8 +517,7 @@ main {
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
-.nav__items__links:hover::after {
+.navigation .nav__items__links:hover::after {
   transform: scaleX(1);
   opacity: 1;
 }
@@ -1248,31 +1243,40 @@ span.minutes::before {
     flex-direction: row;
     align-items: center;
   }
-  .container__items--navigation .nav__list {
+  .header__inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .navigation {
     display: flex;
     position: static;
     flex-direction: row;
     height: auto;
     background: none;
-    width: auto;
+    width: 100%;
     padding-top: 0;
     align-items: center;
     justify-content: center;
   }
-  .container__items--navigation .nav__items {
+  .navigation .nav__list {
+    display: flex;
+    flex-direction: row;
+  }
+  .navigation .nav__items {
     margin-left: var(--spacing-400);
     align-self: center;
     font: var(--font-7);
     color: var(--neutral-900);
   }
-  .container__items--navigation .nav__items .nav__items__links {
+  .navigation .nav__items .nav__items__links {
     color: var(--neutral-900);
     font: var(--font-7);
   }
-  .container__items--navigation .button-recipes {
+  .navigation .button-recipes {
     padding: var(--spacing-100) var(--spacing-200);
     border-radius: var(--radius-10);
-    align-self: center;
+    margin-left: auto;
   }
   .hero__about {
     display: grid;

@@ -77,7 +77,9 @@
   
 //  home page styles queries
 
-
+.hero{
+    margin-top:var(--spacing-1800);
+}
 
 
 .service__list{
@@ -91,21 +93,46 @@
     align-items:center;
 }
 // navigation styles
- .container__items--navigation{
+
+.header__inner{
+  display:flex;
+    justify-content:space-between;
+   align-items:center;
+  gap: var(--spacing-1800);
+
+
+   .nav-logo {
+ 
+        max-inline-size: none;
+}
+}
+
+
+    
+
+ 
    
 
-    .nav__list {
-        display:flex;
+.navigation {
+
+display: grid;
     position: static;
     flex-direction: row;
     height: auto;
     background: none;
-    width: auto;
-    padding-top:0;
+    width: 100%;
+    padding-top: 0;
     align-items: center;
-    justify-content:center;
+    justify-content: space-between;
+    margin-left: var(--spacing-600);
+    grid-template-columns: 1fr auto;
+
    
-   
+    
+
+     .nav__list {
+    display:flex;
+    flex-direction:row;
      
 
   }  .nav__items {
@@ -118,12 +145,13 @@
         color:var(--neutral-900);
         font: var(--font-7);
     }
+
   }
 
   .button-recipes{
     padding:var(--spacing-100) var(--spacing-200);
     border-radius: var(--radius-10);
-    align-self: center;
+  
   }
 }
 
@@ -131,7 +159,7 @@
 .hero__about{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap:var(--spacing-500);
+    gap:var(--spacing-1800);
 }
 .about__section--info,
 .about__section--beyond

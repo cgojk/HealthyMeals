@@ -110,8 +110,8 @@ main{
 //=========================== navigaiton============================
 
 
-.logo{
-  width: 100px;
+.nav-logo{
+ 
   height: auto;
 }
 
@@ -149,79 +149,71 @@ main{
     background-color: var(--neutral-300);
     
 }
-.container__items--navigation{
+
    
- .nav__list {
-  position: fixed;
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  background-color: var(--neutral-0);
- gap:var(--spacing-150);;
-  top: 70px;
+ .navigation {
+position:fixed;
+  top:70px;
+  right:-100%;
+  width:100%;
+  transition:right .3s ease;
+  background-color:var(--neutral-0);
   padding:var(--spacing-200);
-  right: -100%; /* hidden off screen */
-  width: 100%;
-  height: 22vh;
-   transition: right 0.3s ease;
-   border-radius:var(--radius-6);
-  font:var(--font-2);
- 
-
-
 }
-}
-
 
 .nav__list .nav__items {
   display:flex;
   flex-direction:column;
-//   text-transform: uppercase;
-  align-self:flex-start;
+display:inline-block;
+ 
   
 
 }
 
+.navigation .button-recipes{
+  width:100%;
+  
+}
+
 
 // when menu is open 
-.container__items--navigation{
- .nav__list.open {
+
+ .navigation.open {
   right: 0; /* slide in */
 }
-}
 
-.navigation{
+
+.nav__list{
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:2em;
+   flex-direction:column;
+    
     
 }
 
 .nav__list__item a {
    
     color:var(--neutral-900);
-        font: var(--font-5);
+        font: var(--font-7);
+        text-decoration: none;
     
     
 }
 .nav__list__item {
     margin-left: 10px;
     font-size: 1.1rem;
-  
-}
-
-.nav__items__links {
-  text-decoration: none;
  
-
-  cursor:pointer;
-
-  font: var(--font-5);
-  position: relative;
-   
 }
-.nav__items__links::after {
+
+
+.navigation {
+.nav__items__links{
+    text-decoration: none; 
+      cursor:pointer;
+  font: var(--font-7);
+  position: relative;
+    display:inline-block;
+
+&::after {
   content: "";
   position: absolute;
   left: 0;
@@ -234,9 +226,11 @@ main{
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
-.nav__items__links:hover::after {
+&:hover::after {
   transform: scaleX(1);   
   opacity: 1;
+}
+}
 }
 
 .nav__list .nav__logo {
