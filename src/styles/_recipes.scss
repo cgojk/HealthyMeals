@@ -3,6 +3,12 @@
 
 .recipes{
   padding:var(--spacing-150);
+
+  .wrapper__title__text--recipes{
+    
+    margin-bottom: var(--spacing-1000);
+
+  }
     .title__recipes{
         font: var(--font-2);
         letter-spacing: var(--ls-2);
@@ -332,11 +338,7 @@
 
 //========================== styling the page recipe details ===================================
 
-// .recipe-details-section{
-//     padding:var(--spacing-500);
-  
 
-// }
 
 .card__recipe--details{
     background-color:var(--neutral-100);

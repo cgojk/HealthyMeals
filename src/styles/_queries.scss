@@ -69,17 +69,23 @@
         
     }
     .footer {
-  width: 100%;
+    width: 100%;
 }
     .wrapperfooter__item--links{
         display:flex;
+
         justify-content:space-between;
         gap:var(--spacing-300);
     }
   
 //   ===queries reipes styles====
 .recipes{
-    
+      .wrapper__title__text--recipes{
+    width:clamp(300px, 80%,800px);
+    margin:0 auto;
+    margin-bottom: var(--spacing-1000);
+
+  }
 
     .title__recipes{
       text-align:center;
@@ -155,24 +161,22 @@
 // navigation styles
 
 .header__inner{
-  display:flex;
+    display:flex;
     justify-content:space-between;
-   align-items:center;
-  gap: var(--spacing-1800);
+    align-items:center;
+    gap: var(--spacing-1800);
 
 
    .nav-logo {
- 
-        max-inline-size: none;
-}
+         max-inline-size: none;
+   }
 }
 
 
    
 
 .navigation {
-
-display: grid;
+    display: grid;
     position: static;
     flex-direction: row;
     height: auto;
@@ -183,11 +187,12 @@ display: grid;
     justify-content: space-between;
     margin-left: var(--spacing-600);
     grid-template-columns: 1fr auto;
+     transform :translateX(0);
 
    
     
 
-     .nav__list {
+    .nav__list {
     display:flex;
     flex-direction:row;
     gap:0;
@@ -211,6 +216,7 @@ display: grid;
     padding:var(--spacing-200) ;
     border-radius: var(--radius-10);
   
+  
   }
 }
 
@@ -230,7 +236,12 @@ display: grid;
 
 //  recipes styles queries
 .recipes{
-    
+        .wrapper__title__text--recipes{
+   
+    margin:0 auto;
+    margin-bottom: var(--spacing-1000);
+
+  }
 
     .title__recipes{
       text-align:center;
@@ -238,7 +249,9 @@ display: grid;
     }
     .recipes__text{
             max-inline-size: none;
-            text-align: center;;
+            text-align: center;
+            margin-top:var(--spacing-500);
+            max-block-size: 70ch;
     }
 
 }
@@ -277,6 +290,11 @@ display: grid;
 
 
 // recipes detials styles queries
+
+.recipe-details-section{
+    margin-top:var(--spacing-1000);
+
+}
 .card__recipe--details{
     display:flex;
    

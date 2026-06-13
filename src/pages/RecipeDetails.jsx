@@ -49,7 +49,7 @@ console.log("Slug from URL:", slug);
 console.log("All recipes:", data);
 console.log("Found recipe:", recipe);
   return (
-    <>
+<>
 <section className="recipe-details-section container">
 
    <nav className="breadcrumb">
@@ -77,7 +77,7 @@ console.log("Found recipe:", recipe);
         
     />
 </section>
-    <section className="other__recipes ">
+    <section className="other__recipes container ">
         <h2 className="other__recipes--title">More recipes </h2>
         <div className="other__recipes--list">
        {getOtherRecipes(shuffledData, slug).map((recipe) => (
@@ -93,7 +93,7 @@ console.log("Found recipe:", recipe);
        />
         ))}
     </div>
-    </section>
+</section>
 
 </>
   );

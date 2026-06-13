@@ -62,8 +62,10 @@ console.log("FILTERED RESULTS:", filteredRecipes);
     <>
     <Navigation/>
     <section className="recipes container">
-    <h1 className="title__recipes">Explore our simple, healthy recipes</h1>
-    <p className="recipes__text">Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
+      <div className="wrapper__title__text--recipes">
+       <h1 className="title__recipes">Explore our simple, healthy recipes</h1>
+       <p className="recipes__text">Discover eight quick, whole-food dishes that fit real-life schedules and taste amazing. Use the search bar to find a recipe by name or ingredient, or simply scroll the list and let something delicious catch your eye.</p>
+      </div>
     <div className="wrapper__dropdown--menu">
     <div className="dropdown__menu--prepTime">
     <ChoicesDropdownMenu 

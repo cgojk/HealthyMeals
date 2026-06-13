@@ -95,11 +95,6 @@ main{
 }
 
 
-
- 
-
-
-
 .hero__image{
     margin-top:var(--spacing-500);
     border:5px solid var(--neutral-0);
@@ -173,10 +168,10 @@ display:inline-block;
 
 }
 
-.navigation .button-recipes{
-  width:100%;
+// .navigation .button-recipes{
+//   width:100%;
   
-}
+// }
 
 
 // when menu is open 
@@ -255,6 +250,8 @@ display:inline-block;
         margin-bottom: var(--spacing-600);
     }
     .service__list{
+        position:relative;
+         padding-bottom: var(--spacing-800);
        
         
         .service__item{
@@ -272,6 +269,8 @@ display:inline-block;
                 margin-bottom:var(--spacing-150)
 
             }
+
+           
            
             .service__subtitle{
                 font: var(--font-3);
@@ -286,6 +285,16 @@ display:inline-block;
                 margin-bottom: var(--spacing-200);
             }
         }
+
+        &::after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    left: -2rem;
+    right: -2rem;
+    bottom: 0;
+    background-color: #d0dcd9;
+  }
 
 
 }
