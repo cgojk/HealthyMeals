@@ -17,7 +17,7 @@ export default function About() {
 
 
   return (
-   <section className="wrapperabout container">
+   <section className="wrapper__about container">
     <section className="about ">
       <div className="hero__about">
           <div className="wrapper_text">

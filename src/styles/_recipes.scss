@@ -54,7 +54,7 @@
     .card-recipe__image{
         border-radius: var(--radius-6);
         width:100%;
-       
+       aspect-ratio:1/1;
         object-fit:cover;
     }
     .card-recipe__description {
@@ -170,6 +170,7 @@
 .card-recipe__link{
   width:100%;
   display:flex;
+  margin-top:auto;
 }
 
 .button-recipes{
@@ -331,20 +332,18 @@
 
 //========================== styling the page recipe details ===================================
 
-.recipe-details-section{
-    padding:var(--spacing-150);
+// .recipe-details-section{
+//     padding:var(--spacing-500);
   
 
-}
-.recipe-details{
-  background-color:var(--neutral-100)
-}
-.card-recipe--details{
+// }
+
+.card__recipe--details{
     background-color:var(--neutral-100);
-      border-radius: var(--radius-10);
-      padding:var(--spacing-150);
-       border:none;
-       box-shadow:none;
+    border-radius: var(--radius-10);
+    padding:var(--spacing-150);
+    border:none;
+    box-shadow:none;
     border:none;
 
     &:hover{
@@ -352,12 +351,26 @@
       box-shadow:none;
     }
 }
-.card-recipe--details .card-recipe__title{
+.card-recipe__image-wrapper{
+   
+    overflow:hidden;
+    .card-recipe__image{
+        
+          border-radius: var(--radius-6);
+        width:100%;
+       aspect-ratio:1/1;
+        object-fit:cover;
+
+    }
+   
+}
+
+.info__recipe .card-recipe__title{
     font: var(--font-2);
     letter-spacing: var(--ls-2);
     color: var(--neutral-900);
 }
-.card-recipe--details .card-recipe__description{
+.info__recipe .card-recipe__description{
     font: var(--font-6);
     letter-spacing: var(--ls-6);
     color: var(--neutral-900);
@@ -427,4 +440,16 @@
         gap:var(--spacing-300);
         flex-direction:column;
     }
-  }
+
+   
+
+
+.other__recipes--list{
+
+    display:grid;
+   
+   grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+    gap:var(--spacing-300);
+} 
+}
+  

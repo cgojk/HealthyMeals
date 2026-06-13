@@ -7,7 +7,8 @@ import iconbluesky from "../assets/images/icon-bluesky.svg";
 
 export default function Footer(){
     return(
-         <section className="footer container">
+    <footer className="footer ">
+     <div className="wrapperfooter__item--links container">
     <ul className="footer__links">
       <li className="footer__item">
         <a href="#" className="footer__link">
@@ -26,7 +27,11 @@ export default function Footer(){
       </li>
       
     </ul>
+  
+    <div className="text__footer">
     <p className="footer__text">Made with ❤️ and 🥑</p>
-  </section>
+    </div>
+   </div>
+  </footer>
     )
 }

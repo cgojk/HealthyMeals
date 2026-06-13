@@ -9,6 +9,7 @@ import ButtonRecipes from "./UI/ButtonRecipes";
 
 
 
+
 export default function Navigation(){
 
  const[menuOpen,setMenuOpen]= useState(false);
@@ -20,9 +21,9 @@ export default function Navigation(){
 
 return (
 
-<header className="header max-container">
+<header className="header container">
 <div className="header__inner">
-  
+
         <Link to="/home" className="nav-logo-link">
         <img src={logo} className=" nav-logo" alt=" Healthy meals" />
        </Link>
@@ -51,8 +52,9 @@ return (
 
             
         </ul>
+        <Link to="/recipes" >
          <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes> 
-       
+        </Link>
      </nav>
 
         <button

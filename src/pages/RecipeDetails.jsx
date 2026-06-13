@@ -5,6 +5,7 @@ import data from "../data/data.json";
 import CardRecipe from "../components/CardRecipe";
 import { Link } from "react-router-dom";
 import arrow from "../assets/images/icon-bullet-point.svg";
+import CardRecipeDetails from "../components/CardRecipeDetails";
 
 
 export default function RecipeDetails() {
@@ -58,70 +59,26 @@ console.log("Found recipe:", recipe);
        <span> / </span>
        <span className="breadcrumb__current">{recipe.title}</span>
    </nav>
-<div className="wrapper__cardrecipeallcontent">
-  <div className="recipe-details--choicecard">
+
+
 
       {/* reuse card for header */}
-    <CardRecipe
+    <CardRecipeDetails
         slug={recipe.slug}
         key={recipe.id}
         title={recipe.title}
         image={recipe.image}
-
         overview={recipe.overview}
         servings={recipe.servings}
         prepMinutes={recipe.prepMinutes}
         cookMinutes={recipe.cookMinutes}
-        showLink={false}
-        variant="details"
-
+        ingredients={recipe.ingredients}
+        instructions={recipe.instructions}
         
     />
-</div>
-
-<div className="recipe-details__ingredients-instructions">
-  <div className="recipe-details__ingredients">
-        {/* ingredients */}
-        <h2 className="recipe-details__title">Ingredients</h2>
-        <ul>
-                    {recipe.ingredients.map((item, i) => (
-                    <li className="ing__item" key={i}>
-                    <img
-                    className="recipe-details__arrow"
-                    src={arrow}
-                    alt="arrow separate items ingredients"
-                />
-                {item}
-                </li>
-            ))}
-        </ul>
-
-      </div>
-
-      {/* instructions */}
-      <div className="recipe-details__instructions">
-        <h2 className="Instructions__title">Instructions</h2>
-        <ul>
-          {recipe.instructions.map((step, i) => (
-            <li className="inst__item" key={i}>
-                  <img className="recipe-details__arrow" 
-                  src={arrow} 
-                  alt="Arrow"
-                   />
-             {step}
-              </li>
-          
-          ))}
-        </ul>
-      </div>
-</div>
-</div>
-  
 </section>
-
-    <section className="other__recipes container">
-
-        <h2 className="other__recipes--title">Other recipes you might like</h2>
+    <section className="other__recipes ">
+        <h2 className="other__recipes--title">More recipes </h2>
         <div className="other__recipes--list">
        {getOtherRecipes(shuffledData, slug).map((recipe) => (
           <CardRecipe
@@ -133,12 +90,9 @@ console.log("Found recipe:", recipe);
             servings={recipe.servings}
             prepMinutes={recipe.prepMinutes}
             cookMinutes={recipe.cookMinutes}
-            
-            
-          />
+       />
         ))}
-        </div>
-
+    </div>
     </section>
 
 </>

@@ -132,10 +132,10 @@ console.log("FILTERED RESULTS:", filteredRecipes);
 
       </div>
 
-    </section>
+   
     <CalltoAction/>
   
-
+ </section>
     </>
   )
     }
