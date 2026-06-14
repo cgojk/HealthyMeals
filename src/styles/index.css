@@ -1,37 +1,16 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Nunito";
-  src: url("./../assets/fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("./../assets/fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Nunito";
-  src: url("./../assets/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
-  font-weight: 700;
+  src: url("/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Nunito Sans";
-  src: url("./../assets/fonts/Nunito-Sans/static/NunitoSans-Regular.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Nunito Sans";
-  src: url("./../assets/fonts/Nunito-Sans/static/NunitoSans-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+  src: url("/public/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 html {
@@ -435,7 +414,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-200) var(--spacing-100) var(--spacing-100) var(--spacing-200);
+  padding: var(--spacing-200) var(--spacing-200) var(--spacing-100) var(--spacing-200);
   border-bottom: 1px solid var(--neutral-300);
 }
 
@@ -473,10 +452,6 @@ main {
   display: flex;
   flex-direction: column;
   display: inline-block;
-}
-
-.navigation .button-recipes {
-  width: 100%;
 }
 
 .navigation.open {
@@ -540,6 +515,10 @@ main {
   color: var(--neutral-900);
   margin-bottom: var(--spacing-600);
 }
+.service .service__list {
+  position: relative;
+  padding-bottom: var(--spacing-800);
+}
 .service .service__list .service__item .service__item__icon {
   border: 5px solid var(--neutral-0);
   border-radius: var(--radius-6);
@@ -563,6 +542,15 @@ main {
   letter-spacing: var(--ls-6);
   color: var(--neutral-600);
   margin-bottom: var(--spacing-200);
+}
+.service .service__list::after {
+  content: "";
+  height: 1px;
+  position: absolute;
+  left: -2rem;
+  right: -2rem;
+  bottom: 0;
+  background-color: #d0dcd9;
 }
 
 .intro__services {
@@ -699,6 +687,8 @@ span.minutes::before {
   display: inline-block;
   margin-top: var(--spacing-600);
   margin-bottom: var(--spacing-300);
+  padding: var(--spacing-100);
+  border-radius: var(--radius-10);
 }
 .wrapper_text .about__title {
   font: var(--font-2);
@@ -767,6 +757,11 @@ span.minutes::before {
   color: var(--neutral-800);
 }
 
+.wrapper__image--arrow .about__icon--arrow {
+  max-width: 24px;
+  height: auto;
+}
+
 .about__section--beyond {
   padding: var(--spacing-200);
   margin-top: var(--spacing-800);
@@ -807,17 +802,19 @@ span.minutes::before {
   width: 100%;
 }
 
-.recipes padding:var(--spacing-150) .wrapper__title__text--recipes {
-  margin-top: var(--spacing-400);
-  margin-bottom: var(--spacing-4000);
+.recipes {
+  padding: var(--spacing-150);
 }
-.recipes padding:var(--spacing-150) .wrapper__title__text--recipes .title__recipes {
+.recipes .wrapper__title__text--recipes {
+  margin-bottom: var(--spacing-400);
+}
+.recipes .title__recipes {
   font: var(--font-2);
   letter-spacing: var(--ls-2);
   color: var(--neutral-900);
   margin-top: var(--spacing-1200);
 }
-.recipes padding:var(--spacing-150) .wrapper__title__text--recipes .recipes__text {
+.recipes .recipes__text {
   font: var(--font-6);
   letter-spacing: var(--ls-6);
   color: var(--neutral-600);
@@ -1257,7 +1254,7 @@ span.minutes::before {
     gap: var(--spacing-300);
   }
   .recipes .wrapper__title__text--recipes {
-    width: 80vh;
+    width: clamp(300px, 80%, 800px);
     margin: 0 auto;
     margin-bottom: var(--spacing-1000);
   }
@@ -1332,6 +1329,7 @@ span.minutes::before {
     justify-content: space-between;
     margin-left: var(--spacing-600);
     grid-template-columns: 1fr auto;
+    transform: translateX(0);
   }
   .navigation .nav__list {
     display: flex;
@@ -1362,6 +1360,10 @@ span.minutes::before {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-500);
+  }
+  .recipes .wrapper__title__text--recipes {
+    margin: 0 auto;
+    margin-bottom: var(--spacing-1000);
   }
   .recipes .title__recipes {
     text-align: center;
