@@ -21,6 +21,8 @@
         display: inline-block;
         margin-top:var(--spacing-600);
         margin-bottom:var(--spacing-300);
+        padding:var(--spacing-100);
+        border-radius: var(--radius-10);
     }
     .about__title{
         font:var(--font-2);
@@ -78,6 +80,7 @@
             flex-direction:row;
             gap:var(--spacing-300);
         }
+      
        
         .wrapper__subtitle--description{
             display:flex;
@@ -106,6 +109,14 @@
     }
 
 }
+
+  .wrapper__image--arrow{
+            .about__icon--arrow{
+             
+                max-width: 24px;
+                height: auto;
+            }
+        }
 
 // beyond Plate section ==============================
 
