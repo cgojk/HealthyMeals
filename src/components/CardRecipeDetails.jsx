@@ -17,25 +17,25 @@ export default function CardRecipeDetails({
                  
     }) {
 
-  const getImageUrl = (path) => {
-    return new URL(path, import.meta.url).href;
-  };
+//   const getImageUrl = (path) => {
+//     return new URL(path, import.meta.url).href;
+//   };
 
-//   image not found  palceholder funciton
-const getPlaceholderImage = () => {
-  return new URL("../assets/images/banana-pancakes-small.webp", import.meta.url).href;
-};
+// //   image not found  palceholder funciton
+// const getPlaceholderImage = () => {
+//   return new URL("../assets/images/banana-pancakes-small.webp", import.meta.url).href;
+// };
 
-  const imageUrl =image?.large? getImageUrl(image.large)
-    : image?.small? getImageUrl(image.small): getPlaceholderImage();
+//   const imageUrl =image?.large? getImageUrl(image.large)
+//     : image?.small? getImageUrl(image.small): getPlaceholderImage();
 
     return (
         <div className="card__recipe--details">
            
             <picture className="card-recipe__image-wrapper">
-                <source media="(max-width: 768px)" srcSet={getImageUrl(image.small)} />
-                <source media="(min-width: 769px)" srcSet={getImageUrl(image.large)} />
-                 <img src={imageUrl} alt={title} className="card-recipe__image" />
+                <source media="(max-width: 768px)" srcSet={image.small} />
+                <source media="(min-width: 769px)" srcSet={image.large} />
+                 <img src={image.large || image.small} alt={title} className="card-recipe__image" />
             </picture>
             
          <div className="info__recipe">
