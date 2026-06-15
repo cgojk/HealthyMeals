@@ -1,4 +1,7 @@
 
+/* ==============================================
+            GLOBAL BASE STYLES / HOME PAGE STYLES
+   ==============================================*/
 body {
     background-color:var(--neutral-100);
     color: var(--clr-neutral-600);
@@ -8,13 +11,18 @@ body {
 
 }
 
-main{
-    flex:1;
+.recipe-details__arrow {
+    width: 100%;
+    max-width: 24px; 
+    height: auto;
 }
+
 .container{
     max-width: 1200px;
     margin:0 auto;
 }
+
+
 
 .logo-image{
     cursor:pointer;
@@ -47,23 +55,26 @@ main{
         color: var(--neutral-900);
          max-inline-size: 15ch;
             margin-top: var(--spacing-600);
-            position:relative;
+           
       
         
 
     }
-    .title__hero::before{
-       
-        content:"";
+    .highlight{
+        position:relative;
         display:inline-block;
-        width:40%;
-        position:absolute;
+        z-index:1;
+    }
+    .highlight::before{
        
-        height: 40px;
-        top:15px;
-        background-color: var(--orange-300);
-        margin-top: var(--spacing-100);
-        z-index:-1;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0.1em;
+    width: 100%;
+    height: 0.5em;
+    background: var(--orange-300);
+    z-index: -1;
     }
     .hero__text{
         font: var(--font-6);
@@ -100,7 +111,7 @@ main{
 }
 
 
-//=========================== navigaiton============================
+//=========================== NAVIGATION STYLES============================
 
 
 .nav-logo{
@@ -169,10 +180,6 @@ display:inline-block;
 }
 
 
-
-
-// when menu is open 
-
  .navigation.open {
   right: 0; /* slide in */
 }
@@ -182,8 +189,7 @@ display:inline-block;
     display:flex;
    flex-direction:column;
    gap:var(--spacing-300);
-    
-    
+   
 }
 
 .nav__list__item a {
@@ -234,7 +240,7 @@ display:inline-block;
   margin-bottom: 8em;
 }
 
-// services styles ======================
+// =========================== services styles ======================
 
 .service{
     padding:var(--spacing-200);
@@ -350,7 +356,8 @@ display:inline-block;
 
 
 
-// seciton call to action container================
+// ===========SECTION  call to action container================
+
 .recipes__section{
     padding:var(--spacing-200);
 }
@@ -362,7 +369,7 @@ display:inline-block;
     margin-top:var(--spacing-500);
     flex-direction:column;
     background-color:var(--neutral-200);
-    padding:var(--spacing-300);
+    padding:var(--spacing-1000);
      border-radius:var(--radius-16);
 
     .call-to-action__title{
@@ -401,6 +408,8 @@ display:inline-block;
     
    display:none;
 }
+
+//====================== Footer styling====================================
 
 .footer{
     width:100%;

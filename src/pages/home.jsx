@@ -23,7 +23,7 @@ export default function Home() {
     className="hero__background-pattern"
   />
           
-          <h1 className="title__hero ">Healthy meals, zero fuss</h1>
+          <h1 className="title__hero "><span className="highlight">Healthy</span> meals, zero fuss</h1>
           <p className="hero__text">
             Discover eight quick, whole-food recipes that you can cook 
             tonight—no processed junk, no guesswork.

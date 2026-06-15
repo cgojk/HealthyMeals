@@ -1,3 +1,9 @@
+/* ==============================
+    RESPONSIVE MEDIA QUERIES
+   ==============================*/
+
+
+
 @media only screen and (min-width: 700px) {
 
      .hero{
@@ -73,9 +79,11 @@
 }
     .wrapperfooter__item--links{
         display:flex;
-
         justify-content:space-between;
         gap:var(--spacing-300);
+        flex-direction: row-reverse;
+        width:100%;
+    
     }
   
 //   ===queries reipes styles====
@@ -139,6 +147,8 @@
   
 //  home page styles queries
 
+
+
 .navigation {
   position: static;
   right: auto;
@@ -179,8 +189,7 @@
    }
 }
 
-
-   
+  
 
 .navigation {
     display: grid;
@@ -329,4 +338,6 @@
             grid-column: 4/5;
         }
 }
+
+
 }

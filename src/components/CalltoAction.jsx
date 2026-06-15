@@ -14,16 +14,13 @@ export default function CalltoAction() {
       <p className="call-to-action__description">
         Hit the button, pick a recipe, and get dinner on the table—fast.
       </p>
-
       <Link to="/recipes">
         <ButtonRecipes className="button-recipes">Browse recipes</ButtonRecipes>
       </Link>
-
-
    <img className="cta__fork-pattern" src={forkpattern} alt="fork pattern" />
   <img className="cta__knife-pattern" src={knifepattern} alt="knife pattern" />
 </div>
-            </>
+</>
             
     )
 }

@@ -611,7 +611,7 @@ span.minutes::before {
   margin-top: var(--spacing-500);
   flex-direction: column;
   background-color: var(--neutral-200);
-  padding: var(--spacing-300);
+  padding: var(--spacing-1000);
   border-radius: var(--radius-16);
 }
 .call-to-action .call-to-action__title {
@@ -1254,6 +1254,8 @@ span.minutes::before {
     display: flex;
     justify-content: space-between;
     gap: var(--spacing-300);
+    flex-direction: row-reverse;
+    width: 100%;
   }
   .recipes .wrapper__title__text--recipes {
     width: clamp(300px, 80%, 800px);
@@ -1427,5 +1429,14 @@ span.minutes::before {
   }
   .wrapper__dropdown--menu .search__button {
     grid-column: 4/5;
+  }
+  .footer .footer__links .footer__item .wrapperfooter__item--links {
+    border: 2px solid red;
+  }
+  .footer .footer__links .footer__item .footer__link {
+    border: 2px solid blue;
+  }
+  .footer .footer__links .footer__item .text__footer {
+    border: 2px solid green;
   }
 }/*# sourceMappingURL=index.css.map */
