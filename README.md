@@ -20,7 +20,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
+- Solution URL: https://github.com/cgojk/HealthyMeals
 - Live Site URL: https://comforting-conkies-5f4bc6.netlify.app/
 
 ## My process

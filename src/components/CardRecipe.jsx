@@ -25,19 +25,11 @@ export default function CardRecipe({
          
     }) {
 
-//   const getImageUrl = (path) => {
-//     return new URL(path, import.meta.url).href;
-//   };
 
-//   image not found  palceholder funciton
-// const getPlaceholderImage = () => {
-//   return new URL("../assets/images/banana-pancakes-small.webp", import.meta.url).href;
-// };
 
 const cardClasses =classNames("card-recipe");
 
-//   const imageUrl =image?.large? getImageUrl(image.large)
-//     : image?.small? getImageUrl(image.small): getPlaceholderImage();
+
 
     return (
         <div className={cardClasses}>
