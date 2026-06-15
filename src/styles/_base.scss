@@ -438,7 +438,7 @@ display:inline-block;
                 transition: color 0.3s ease;
 
                 &:hover {
-                    color: var(--neutral-900);
+                    opacity:0.5;
                 }
             }
         }
