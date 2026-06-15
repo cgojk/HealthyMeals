@@ -83,24 +83,10 @@ body {
         margin-top: var(--spacing-200);
        
         max-inline-size: 34ch;
+        margin-bottom:var(--spacing-400);
     }
 
-    .btn{
-        display: inline-block;
-        
-         margin-top: var(--spacing-400);
-        background-color: var(--neutral-900);
-        font: var(--font-4);
-        color: var(--neutral-100);
-        padding:var(--spacing-200);
-        border-radius: var(--radius-10);
-        transition: background-color 0.3s ease;
-
-
-        &:hover {
-            opacity:0.5;
-        }
-    }
+    
 }
 
 

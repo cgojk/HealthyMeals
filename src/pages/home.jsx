@@ -8,6 +8,7 @@ import iconsearch from "../assets/images/icon-search-in-seconds.svg";
 import introserviceimage from "../assets/images/image-home-real-life-small.webp";
 import introserviceimagedesktop from "../assets/images/image-home-real-life-large.webp";
 import imagebehindhero from "../assets/images/pattern-squiggle-1.svg";
+import { Link } from "react-router-dom";
 
 import CalltoAction from "../components/CalltoAction";
 
@@ -28,7 +29,10 @@ export default function Home() {
             Discover eight quick, whole-food recipes that you can cook 
             tonight—no processed junk, no guesswork.
           </p>
-          <button className="btn">Start exploring</button>
+          <Link to="/recipes">
+            <button className="button-recipes">Start exploring</button>
+          </Link>
+         
         
           
               <picture className="hero__picture container" aria-label="Hero image showing a healthy meal">
