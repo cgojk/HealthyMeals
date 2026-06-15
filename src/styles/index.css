@@ -8,7 +8,7 @@
 }
 @font-face {
   font-family: "Nunito Sans";
-  src: url("/public/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
+  src: url("/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -406,7 +406,7 @@ main {
   top: 0;
   right: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 2000;
   background-color: var(--neutral-100);
 }
 
@@ -414,7 +414,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-200) var(--spacing-200) var(--spacing-100) var(--spacing-200);
+  padding: var(--spacing-200) var(--spacing-400) var(--spacing-100) var(--spacing-200);
   border-bottom: 1px solid var(--neutral-300);
 }
 
@@ -429,10 +429,11 @@ main {
   font-size: 1.8rem;
   cursor: pointer;
   margin-left: auto;
-  z-index: 2000;
+  z-index: 2100;
   margin-top: -0.3em;
   padding: var(--spacing-100);
   background-color: var(--neutral-300);
+  position: relative;
 }
 
 .navigation {
@@ -446,6 +447,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-300);
+  z-index: 1500;
 }
 
 .nav__list .nav__items {
@@ -1292,6 +1294,14 @@ span.minutes::before {
   }
 }
 @media only screen and (min-width: 1200px) {
+  .navigation {
+    position: static;
+    right: auto;
+    left: auto;
+    transform: none;
+    height: auto;
+    width: auto;
+  }
   .menu-btn {
     display: none;
   }
@@ -1387,15 +1397,6 @@ span.minutes::before {
     border-radius: var(--radius-20);
     overflow: hidden;
     position: relative;
-  }
-  .wrapper__image .patternoverhero {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200px;
-    height: auto;
-    z-index: 9999;
-    border: 2px solid red;
   }
   .recipe-details-section {
     margin-top: var(--spacing-1000);

@@ -139,7 +139,14 @@
   
 //  home page styles queries
 
-
+.navigation {
+  position: static;
+  right: auto;
+  left: auto;
+  transform: none;
+  height: auto;
+  width: auto;
+}
 .menu-btn {
     display: none;
   }
@@ -276,15 +283,7 @@
         position:relative;
     
 
- .patternoverhero {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 200px;
-  height: auto;
-  z-index: 9999;
-  border: 2px solid red;
-}
+
 
 }
 
