@@ -19,9 +19,19 @@ export default function Navigation() {
   }, [location.pathname]);
 
   // lock body scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
-  }, [menuOpen]);
+
+
+useEffect(() => {
+  if (menuOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+
+  return () => {
+    document.body.style.overflow = "";
+  };
+}, [menuOpen]);
 
   return (
 
